@@ -106,6 +106,7 @@ def build(bld):
     # bridge and mpi dependencies are due to global routing
     obj = bld.create_ns3_module('internet', ['bridge', 'mpi', 'traffic-control', 'network', 'core'])
     obj.source = [
+        'model/chat-header.cc',
         'model/ip-l4-protocol.cc',
         'model/udp-header.cc',
         'model/tcp-header.cc',
@@ -227,7 +228,6 @@ def build(bld):
         'model/rip.cc',
         'model/rip-header.cc',
         'helper/rip-helper.cc',
-        'model/new-header.cc'
         ]
 
     internet_test = bld.create_ns3_module_test_library('internet')
@@ -302,6 +302,7 @@ def build(bld):
     headers = bld(features='ns3header')
     headers.module = 'internet'
     headers.source = [
+        'model/chat-header.h',
         'model/udp-header.h',
         'model/tcp-header.h',
         'model/tcp-option.h',
@@ -411,8 +412,7 @@ def build(bld):
         'model/rip.h',
         'model/rip-header.h',
         'helper/rip-helper.h',
-        'model/new-header.h'
-        ]
+       ]
 
     if bld.env['NSC_ENABLED']:
         obj.source.append ('model/nsc-tcp-socket-impl.cc')
