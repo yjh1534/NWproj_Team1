@@ -24,7 +24,7 @@ NS_LOG_COMPONENT_DEFINE ("ChatServerApplication");
 
 NS_OBJECT_ENSURE_REGISTERED (ChatServer);
 
-/*  need modified
+  need modified
 TypeId ChatServer::GetTypeId (void){
     static TypeId tid = TypeId ("ns3::ChatServer")
         .SetParent<Application>()
@@ -36,14 +36,20 @@ TypeId ChatServer::GetTypeId (void){
 ;
     return tid;
 }
-*/
+
 ChatServer::ChatServer()
     :ClientNumber(0),
     m_packetSize(1000),
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
-    m_sendEvent(EventId())
+    m_sendEvent(EventId()),
+    clientId(0),
+    chatroom(100),
+    personal(0),
+    group(0),
+    init(0)
+
 {
     NS_LOG_FUNCTION(this);
 }
@@ -75,18 +81,33 @@ void ChatServer::SendPacket(void){
     Ptr<Packet> packet = Create<Packet> (m_packetSize);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
-    if(ClientNumber == 1){
-        d_to_send.push_back(0);
-        d_to_send.push_back()//client id
+    if(personal==1){
+        d_to_send.push_back(1);
+        d_to_send.push_back(OtherClientNumber);
+        personal = 0;
+        OtherClientNumber=0;
     }
-    else{
-        if (ChatRoom.empty()){
-            d_to_send.push_back(); //no client is in chat room
-        }
-        else{
-            d_to_send.push_back(1);
-            d_to_send.push_back(); //client id
-        }
+    if(group!=0){
+        d_to_send.push_back(2);
+        d_to_send.push_back(); //Client id
+        d_to_send.push_back(group);
+        group = 0;
+    }
+    if(initid!=0){
+        d_to_send.push_back(0);
+        d_to_send.push_back(initid);
+        initid=0;
+    }
+    if(initgr!=0){
+        d_to_send.push_back(3);
+        d_to_send.push_back(initgr);
+        initgr = 0;
+    }
+    if(nowgroup!=0){
+        d_to_send.push_back(4);
+        d_to_send.push_back(nowgroup);
+        d_to_send.push_back(); // Client id;
+        nowgroup = 0;
     }
     shdr.SetData(d_to_send);
     packet->AddHeader(shdr);
@@ -109,12 +130,33 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             packet->RemoveHeader(hdr);
             data = hdr.GetData();
             uint32_t m = data[0];
+            std::vector<uint32_t> tmp;
             if(m==0){
-                ClientNumber = 1;
+                ClientNumber = cliendId.size()+1;   //give id
+                tmp.push_back(ClientNumber);
+                tmp.push_back(m_address);
+                clienId.push_back(tmp);
+                initid = 1;
+            }
+            else if(m==1){
+                personal = 1;
+         //       SentMsg = data[1];
+                OtherClientNumber = data[1];    
+            }
+            else if(m==2){
+                group = data[1];
+        //        SentMsg = data[1];
+                SentRoom = data[1];
+            }
+            else if(m==3){
+                uint32_t tm = data[1];
+                chatroom[tm].push_back(); //client id
+                initgr = tm;
             }
             else{
-                SentMsg = data[1];
-                SentRoom = data[2]; 
+                uint32_t tm = data[1];   
+                nowgroup = tm;  
+                chatroom.erase(remove(chatroom.begin(), chatroom.end(), tm), chatroom.end());
             }
         }
     }

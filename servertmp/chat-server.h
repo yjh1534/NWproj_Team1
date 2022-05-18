@@ -40,18 +40,25 @@ class ChatServer : public Application
         Address m_address;
         uint16_t m_port;
         uint32_t ClientNumber;
+        uint32_t OtherClientNumber;
+        uint32_t personal;
+        uint32_t group;
+        uint32_t nowgroup;
+        uint32_t initid;
+        uint32_t initgr;
         std::vector<uint32_t> data;
         std::vector<uint32_t> ChatRoom;
         std::vector<uint32_t> otherClients;
         uint32_t SentClient;
-        uint32_t SentMsg;
+    //  uint32_t SentMsg;
         uint32_t SentRoom;
         uint32_t m_packetSize;
         bool m_running;
         uint32_t m_packetsSent;
         Ptr<Socket> m_socket;
         EventId m_sendEvent;
-
+        std::vector<vector<<uint32_t> > clientId;
+        std::vector<vector<uint32_t> > chatroom;
         TracedCallback<Ptr<const Packet> > m_txTrace;
         TracedCallback<Ptr<const Packet> > m_rxTrace;
 };
