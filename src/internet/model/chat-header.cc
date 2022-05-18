@@ -31,12 +31,13 @@ void ChatHeader::Print (std::ostream &os) const
 
 uint32_t ChatHeader::GetSerializedSize (void) const
 {
-    return m_data.size() * 4;
+    return m_data.size() * 4 + 4;
 }
 
 void ChatHeader::Serialize (Buffer::Iterator start) const
 {
-   for(uint16_t i = 0; i < m_data.size(); ++i){
+    start.WriteHtonU32((uint32_t)m_data.size());
+    for(uint16_t i = 0; i < m_data.size(); ++i){
        start.WriteHtonU32(m_data[i]);
    }
 }
@@ -45,8 +46,10 @@ uint32_t ChatHeader::Deserialize (Buffer::Iterator start)
 {
     Buffer::Iterator i = start;
     m_data.clear();
-    while (!i.IsEnd()){
-        m_data.push_back(i.ReadNtohU32 ());
+    uint32_t j = i.ReadNtohU32();
+
+    for(uint16_t k = 0; k < j; ++k){
+        m_data.push_back(i.ReadNtohU32());
     }
     return i.GetDistanceFrom(start);
 }

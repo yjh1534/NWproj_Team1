@@ -39,10 +39,11 @@ TypeId ChatClient::GetTypeId (void){
 
 ChatClient::ChatClient()
     :ClientNumber(0),
-    m_packetSize(1000),
+    m_packetSize(512),
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
+    r_socket(0),
     m_sendEvent(EventId())
 {
     NS_LOG_FUNCTION(this);
@@ -55,15 +56,21 @@ void ChatClient::StartApplication(void)
     if(!m_socket){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
-        if (m_socket->Bind() == -1)
-            NS_FATAL_ERROR("Failed to bind");
-        m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port));
+        r_socket = Socket::CreateSocket(GetNode(),tid);
+        r_socket->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port));
+        r_socket->Close();
+        if(m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port)) == -1)
+            std::cout << "failed connected\n";
     }
     m_running = true;
-    m_socket->SetRecvCallback (MakeCallback (&ChatClient::HandleRead, this));
-    if(m_socket->Listen())
-        std::cout<<"Listen!!\n";
+    if(r_socket->Listen() == -1)
+        std::cout<<"Failed\n";
+    r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatClient::onAccept, this));
     ScheduleTx (Seconds(1.0));
+}
+void ChatClient::onAccept(Ptr<Socket> s, const Address& from){
+    std::cout << "AAA\n";
+    s->SetRecvCallback(MakeCallback(&ChatClient::HandleRead, this));
 }
 
 void ChatClient::ScheduleTx(Time dt){
@@ -72,66 +79,81 @@ void ChatClient::ScheduleTx(Time dt){
 
 void ChatClient::SendPacket(void){
     NS_LOG_FUNCTION(this);
-    Ptr<Packet> packet = Create<Packet> (m_packetSize);
+    //Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 8);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
     if(ClientNumber == 0){
         d_to_send.push_back(0);
     }
     else{
-        if (ChatRoom.empty()){
-            d_to_send.push_back(2);
-        }
-        else{
-            uint32_t m = (uint32_t)std::rand() % 100;
-            if (m < 90){
+        uint32_t m = (uint32_t)std::rand() % 100;
+        if (m < 90){
+            //send 1:1 message
+            if(ChatRoom.empty() || m < 60){
                 d_to_send.push_back(1);
-                }
-            else if (ChatRoom.empty()){
-                d_to_send.push_back(2);
-                }
+                //d_to_send.push_back(someone's number);
             }
+            //send n:n message
+            else{
+                d_to_send.push_back(2);
+                //d_to_send.push_back(#random chat room in ChatRoom);
+            }
+        }
+        //Create new Room
+        else{
+            d_to_send.push_back(3);
+            //random integer K in (0, otherClient.size() )
+            //select K members from otherClient
+            //push_back all of them.
+        }
+    
     }
     shdr.SetData(d_to_send);
+    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
     packet->AddHeader(shdr);
     m_txTrace(packet);
     m_socket->Send(packet);
-    std::cout<<d_to_send[0]<<" Send "<<m_address<< "\n";
+    std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
     ScheduleTx(Seconds(1.0));
 }
 
 void ChatClient::HandleRead(Ptr<Socket> socket){
     Ptr<Packet> packet;
     Address from;
-    std::cout<<data[0]<<"recieved\n";
-    while ((packet = m_socket->Recv()))
+    while ((packet = socket->Recv()))
     {
         if(packet->GetSize() > 0)
         {
             m_rxTrace(packet);
             ChatHeader hdr;
             packet->RemoveHeader(hdr);
-            data = hdr.GetData();
-            uint32_t m = data[0];
+            std::vector<uint32_t> _data;
+            _data = hdr.GetData();
+            uint32_t m = _data[0];
+            //Get Client number from server
             if(m==0){
-                ClientNumber = data[1];
+                ClientNumber = _data[1];
             }
+            //Receive 1:1 message
             else if (m==1){
-                SentRoom = data[1];
-                SentClient = data[2]; 
+                SentClient = _data[1]; 
             }
+            //Receive n:n message
             else if (m==2){
-                ChatRoom.push_back(data[1]);
+                SentClient = _data[1];
+                SentRoom = _data[2];
             }
+            //Receive invitation to chatting room
             else if (m==3){
-                otherClients.push_back(data[1]);
+                ChatRoom.push_back(_data[1]);
             }
+            //Receive New Client's info
             else if (m==4){
-                ChatRoom.erase(std::find(ChatRoom.begin(), ChatRoom.end(), data[1])); 
+                otherClients.push_back(_data[0]);
             }
         }
     }
-    std::cout<<data[0]<<"recieved\n";
+    std::cout<<ClientNumber<<"recieved\n";
 }
 
 void ChatClient::StopApplication (void){
@@ -142,6 +164,7 @@ void ChatClient::StopApplication (void){
     }
     if(m_socket){
         m_socket->Close();
+        r_socket->Close();
     }
 }
 

@@ -37,11 +37,10 @@ class ChatClient : public Application
         void ScheduleTx(Time dt);
         void SendPacket(void);
         void HandleRead(Ptr<Socket> socket);
-
+        void onAccept(Ptr<Socket> s, const Address& from);
         Address m_address;
         uint16_t m_port;
         uint32_t ClientNumber;
-        std::vector<uint32_t> data;
         std::vector<uint32_t> ChatRoom;
         std::vector<uint32_t> otherClients;
         uint32_t SentClient;
@@ -50,6 +49,7 @@ class ChatClient : public Application
         bool m_running;
         uint32_t m_packetsSent;
         Ptr<Socket> m_socket;
+        Ptr<Socket> r_socket;
         EventId m_sendEvent;
 
         TracedCallback<Ptr<const Packet> > m_txTrace;
