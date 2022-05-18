@@ -12,6 +12,7 @@
 #include "arp-l3-protocol.h"
 #include "arp-queue-disc-item.h"
 #include "candidate-queue.h"
+#include "chat-header.h"
 #include "global-route-manager-impl.h"
 #include "global-route-manager.h"
 #include "global-router-interface.h"
