@@ -11,7 +11,7 @@ using namespace ns3;
 
 class ChatClientHelper{
     public:
-        ChatClientHelper(Address address);
+        ChatClientHelper(Address address, uint16_t port);
         void SetAttribute(std::string name, const AttributeValue &value);
         ApplicationContainer Install (Ptr<Node> node) const;
         ApplicationContainer Install (std::string nodeName) const;

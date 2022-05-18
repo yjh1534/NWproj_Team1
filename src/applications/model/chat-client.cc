@@ -30,6 +30,7 @@ TypeId ChatClient::GetTypeId (void){
         .SetParent<Application>()
         .AddConstructor<ChatClient>()
         .AddAttribute("Address", "Server Address", AddressValue(),MakeAddressAccessor(&ChatClient::m_address), MakeAddressChecker())
+        .AddAttribute("Port", "Serve Port", UintegerValue(0), MakeUintegerAccessor(&ChatClient::m_port), MakeUintegerChecker<uint16_t> ())
         .AddTraceSource("Tx", "Packet send", MakeTraceSourceAccessor(&ChatClient::m_txTrace), "ns3::Packet::TracedCallback")
          .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatClient::m_rxTrace), "ns3::Packet::TracedCallback")
 ;
@@ -37,10 +38,12 @@ TypeId ChatClient::GetTypeId (void){
 }
 
 ChatClient::ChatClient()
-    :m_packetSize(1000),
+    :ClientNumber(0),
+    m_packetSize(1000),
     m_running(false),
     m_packetsSent(0), 
-    m_socket(0)
+    m_socket(0),
+    m_sendEvent(EventId())
 {
     NS_LOG_FUNCTION(this);
 }
@@ -52,12 +55,15 @@ void ChatClient::StartApplication(void)
     if(!m_socket){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
-        m_socket->Bind();
-        m_socket->Connect(m_address);
+        if (m_socket->Bind() == -1)
+            NS_FATAL_ERROR("Failed to bind");
+        m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port));
     }
     m_running = true;
     m_socket->SetRecvCallback (MakeCallback (&ChatClient::HandleRead, this));
-    ScheduleTx (Seconds(0.5));
+    if(m_socket->Listen())
+        std::cout<<"Listen!!\n";
+    ScheduleTx (Seconds(1.0));
 }
 
 void ChatClient::ScheduleTx(Time dt){
@@ -90,12 +96,15 @@ void ChatClient::SendPacket(void){
     packet->AddHeader(shdr);
     m_txTrace(packet);
     m_socket->Send(packet);
+    std::cout<<d_to_send[0]<<" Send "<<m_address<< "\n";
+    ScheduleTx(Seconds(1.0));
 }
 
 void ChatClient::HandleRead(Ptr<Socket> socket){
     Ptr<Packet> packet;
     Address from;
-    while ((packet = m_socket->RecvFrom(from)))
+    std::cout<<data[0]<<"recieved\n";
+    while ((packet = m_socket->Recv()))
     {
         if(packet->GetSize() > 0)
         {
@@ -122,6 +131,7 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             }
         }
     }
+    std::cout<<data[0]<<"recieved\n";
 }
 
 void ChatClient::StopApplication (void){

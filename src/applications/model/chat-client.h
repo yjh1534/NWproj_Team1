@@ -39,6 +39,7 @@ class ChatClient : public Application
         void HandleRead(Ptr<Socket> socket);
 
         Address m_address;
+        uint16_t m_port;
         uint32_t ClientNumber;
         std::vector<uint32_t> data;
         std::vector<uint32_t> ChatRoom;

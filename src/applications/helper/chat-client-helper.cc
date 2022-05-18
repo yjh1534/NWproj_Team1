@@ -5,12 +5,13 @@
 #include "ns3/ipv4-address.h"
 #include "ns3/chat-client-helper.h"
 #include "ns3/names.h"
-
+#include "ns3/uinteger.h"
 using namespace ns3;
 
-ChatClientHelper::ChatClientHelper (Address address){
+ChatClientHelper::ChatClientHelper (Address address, uint16_t port){
     m_factory.SetTypeId("ns3::ChatClient");
     m_factory.Set("Address", AddressValue(address));
+    m_factory.Set("Port", UintegerValue (port));
 }
 
 void ChatClientHelper::SetAttribute(std::string name, const AttributeValue & value){
