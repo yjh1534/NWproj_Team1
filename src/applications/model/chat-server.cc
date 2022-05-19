@@ -88,29 +88,30 @@ void ChatServer::SendPacket(void){
     Ptr<Packet> packet = Create<Packet> (m_packetSize);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
-    if(personal==1){
+    if(personal==1){          //personal chat
         d_to_send.push_back(1);
         d_to_send.push_back(OtherClientNumber);
         personal = 0;
         OtherClientNumber=0;
     }
-    if(group!=0){
+    if(group!=0){           //group chat
         d_to_send.push_back(2);
         d_to_send.push_back(ClientNumber); 
         d_to_send.push_back(group);
         group = 0;
     }
-    if(initid!=0){
+    if(initid!=0){            //first connect give id
         d_to_send.push_back(0);
         d_to_send.push_back(initid);
         initid=0;
     }
-    if(initgr!=0){
+    if(initgr!=0){           //first connect in group chat 
         d_to_send.push_back(3);
         d_to_send.push_back(initgr);
+        d_to_send.push_back(ClientNumber);
         initgr = 0;
     }
-    if(nowgroup!=0){
+    if(nowgroup!=0){          //group out
         d_to_send.push_back(4);
         d_to_send.push_back(nowgroup);
         d_to_send.push_back(ClientNumber); // Client id;
@@ -149,20 +150,23 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             else if(m==1){
                 personal = 1;
          //       SentMsg = data[1];
-                OtherClientNumber = _data[1];    
+                OtherClientNumber = _data[1];
+                ClientNumber = _data[2];   
             }
             else if(m==2){
                 group = _data[1];
-        //        SentMsg = data[1];
                 SentRoom = _data[1];
+                ClientNumber = _data[2];
             }
             else if(m==3){
                 uint32_t tm = _data[1];
+                ClientNumber = _data[2];
                 chatroom[tm].push_back(ClientNumber); //client id
                 initgr = tm;
             }
             else{
                 uint32_t tm = _data[1];   
+                ClientNumber = _data[2];
                 nowgroup = tm;  
                 chatroom.erase(remove(chatroom.begin(), chatroom.end(), tm), chatroom.end());
             }
