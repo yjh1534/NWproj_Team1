@@ -44,11 +44,11 @@ ChatServer::ChatServer()
     m_packetsSent(0), 
     m_socket(0),
     r_socket(0),
+    t_socket(0),
     m_sendEvent(EventId()),
-    mod(0)
+    mod(0),
     clientId(0),
-    chatroom(100),
-    newClient(0)
+    chatroom(100)
 
 {
     NS_LOG_FUNCTION(this);
@@ -57,7 +57,7 @@ ChatServer::ChatServer()
 void ChatServer::StartApplication(void)
 {
     NS_LOG_FUNCTION(this);
-    if(t_socket.size()==0){
+    if(!t_socket.size()){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket = Socket::CreateSocket(GetNode(),tid);
@@ -71,7 +71,6 @@ void ChatServer::StartApplication(void)
         std::cout<<"Failed\n";
     r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
     ScheduleTx (Seconds(1.0));
-
     
 }
 void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
@@ -95,8 +94,6 @@ void ChatServer::SendPacket(void){
     else if(mod%4==1){
         d_to_send.push_back(1);
         d_to_send.push_back(ClientNumber); //ip address need to change others
-     //   m_address = clientId[OtherClientNumber-1].first;
-    //    m_port = clientId[OtherClientNumber-1].second;
     }
     else if (mod%4==2)
     {
