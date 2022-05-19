@@ -39,7 +39,7 @@ TypeId ChatServer::GetTypeId (void){
 
 ChatServer::ChatServer()
     :ClientNumber(0),
-    m_packetSize(1000),
+    m_packetSize(512),
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
@@ -61,16 +61,23 @@ void ChatServer::StartApplication(void)
     if(!m_socket){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
+        r_socket = Socket::CreateSocket(GetNode(),tid);
+        r_socket->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port));
+        r_socket->Close();
         if (m_socket->Bind() == -1)
             NS_FATAL_ERROR("Failed to bind");
         m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port));
     }
     m_running = true;
-    m_socket->SetRecvCallback (MakeCallback (&ChatServer::HandleRead, this));
-    if(m_socket->Listen())
-        std::cout<<"Listen!!\n";
+    if(r_socket->Listen() == -1)
+        std::cout<<"Failed\n";
+    r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
     ScheduleTx (Seconds(1.0));
 }
+void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
+    s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
+}
+
 
 void ChatServer::ScheduleTx(Time dt){
     m_sendEvent = Simulator::Schedule(dt, &ChatServer::SendPacket, this);
@@ -110,17 +117,17 @@ void ChatServer::SendPacket(void){
         nowgroup = 0;
     }
     shdr.SetData(d_to_send);
+    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
     packet->AddHeader(shdr);
     m_txTrace(packet);
     m_socket->Send(packet);
-    std::cout<<d_to_send[0]<<" Send "<<m_address<< "\n";
+    std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
     ScheduleTx(Seconds(1.0));
 }
 
 void ChatServer::HandleRead(Ptr<Socket> socket){
     Ptr<Packet> packet;
     Address from;
-    std::cout<<data[0]<<"recieved\n";
     while ((packet = m_socket->Recv()))
     {
         if(packet->GetSize() > 0)
@@ -128,8 +135,9 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             m_rxTrace(packet);
             ChatHeader hdr;
             packet->RemoveHeader(hdr);
-            data = hdr.GetData();
-            uint32_t m = data[0];
+            std::vector<uint32_t> _data;
+            _data = hdr.GetData();
+            uint32_t m = _data[0];
             std::vector<uint32_t> tmp;
             if(m==0){
                 ClientNumber = cliendId.size()+1;   //give id
@@ -141,26 +149,26 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             else if(m==1){
                 personal = 1;
          //       SentMsg = data[1];
-                OtherClientNumber = data[1];    
+                OtherClientNumber = _data[1];    
             }
             else if(m==2){
-                group = data[1];
+                group = _data[1];
         //        SentMsg = data[1];
-                SentRoom = data[1];
+                SentRoom = _data[1];
             }
             else if(m==3){
-                uint32_t tm = data[1];
+                uint32_t tm = _data[1];
                 chatroom[tm].push_back(); //client id
                 initgr = tm;
             }
             else{
-                uint32_t tm = data[1];   
+                uint32_t tm = _data[1];   
                 nowgroup = tm;  
                 chatroom.erase(remove(chatroom.begin(), chatroom.end(), tm), chatroom.end());
             }
         }
     }
-    std::cout<<data[0]<<"recieved\n";
+    std::cout<< "recieved\n";
 }
 
 void ChatServer::StopApplication (void){
@@ -171,5 +179,6 @@ void ChatServer::StopApplication (void){
     }
     if(m_socket){
         m_socket->Close();
+        r_socket->Close();
     }
 }
