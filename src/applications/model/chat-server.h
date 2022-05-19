@@ -57,7 +57,7 @@ class ChatServer : public Application
         uint32_t m_packetsSent;
         Ptr<Socket> m_socket;
         EventId m_sendEvent;
-        std::vector<vector<<uint32_t> > clientId;
+        std::vector<std::vector<uint32_t> > clientId;
         std::vector<vector<uint32_t> > chatroom;
         TracedCallback<Ptr<const Packet> > m_txTrace;
         TracedCallback<Ptr<const Packet> > m_rxTrace;

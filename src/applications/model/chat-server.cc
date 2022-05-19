@@ -96,7 +96,7 @@ void ChatServer::SendPacket(void){
     }
     if(group!=0){
         d_to_send.push_back(2);
-        d_to_send.push_back(); //Client id
+        d_to_send.push_back(ClientNumber); 
         d_to_send.push_back(group);
         group = 0;
     }
@@ -113,7 +113,7 @@ void ChatServer::SendPacket(void){
     if(nowgroup!=0){
         d_to_send.push_back(4);
         d_to_send.push_back(nowgroup);
-        d_to_send.push_back(); // Client id;
+        d_to_send.push_back(ClientNumber); // Client id;
         nowgroup = 0;
     }
     shdr.SetData(d_to_send);
@@ -122,7 +122,7 @@ void ChatServer::SendPacket(void){
     m_txTrace(packet);
     m_socket->Send(packet);
     std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
-    ScheduleTx(Seconds(1.0));
+    ScheduleTx(Seconds(1.0));                             //need to add group send 
 }
 
 void ChatServer::HandleRead(Ptr<Socket> socket){
@@ -158,7 +158,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             }
             else if(m==3){
                 uint32_t tm = _data[1];
-                chatroom[tm].push_back(); //client id
+                chatroom[tm].push_back(ClientNumber); //client id
                 initgr = tm;
             }
             else{
