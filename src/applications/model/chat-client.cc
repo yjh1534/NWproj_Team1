@@ -175,10 +175,6 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             else if (m == 3){
                 ChatRoom.push_back(_data[1]);
             }
-            //Receive New Client's info
-            else if (m == 4){
-                otherClients.push_back(_data[1]);
-            }
         }
     }
     std::cout<<ClientNumber<<"recieved\n";
