@@ -52,6 +52,7 @@ class ChatServer : public Application
         uint32_t m_packetSize;
         bool m_running;
         uint32_t m_packetsSent;
+        std::vector<Ptr<Socket> > t_socket;
         Ptr<Socket> m_socket;
         Ptr<Socket> r_socket;
         EventId m_sendEvent;

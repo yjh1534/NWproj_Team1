@@ -57,13 +57,11 @@ ChatServer::ChatServer()
 void ChatServer::StartApplication(void)
 {
     NS_LOG_FUNCTION(this);
-
-    if(!m_socket){
+    if(t_socket.size()==0){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port));
-        r_socket->Close();
         if (m_socket->Bind() == -1)
             NS_FATAL_ERROR("Failed to bind");
         m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port));
@@ -73,6 +71,8 @@ void ChatServer::StartApplication(void)
         std::cout<<"Failed\n";
     r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
     ScheduleTx (Seconds(1.0));
+
+    
 }
 void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
     s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
@@ -95,8 +95,8 @@ void ChatServer::SendPacket(void){
     else if(mod%4==1){
         d_to_send.push_back(1);
         d_to_send.push_back(ClientNumber); //ip address need to change others
-        m_address = clientId[OtherClientNumber-1].first;
-        m_port = clientId[OtherClientNumber-1].second;
+     //   m_address = clientId[OtherClientNumber-1].first;
+    //    m_port = clientId[OtherClientNumber-1].second;
     }
     else if (mod%4==2)
     {
@@ -108,14 +108,31 @@ void ChatServer::SendPacket(void){
         d_to_send.push_back(3);
         d_to_send.push_back(SentRoom);
     }
-    
-    shdr.SetData(d_to_send);
-    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
-    packet->AddHeader(shdr);
-    m_txTrace(packet);
-    m_socket->Send(packet);
-    std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
-    ScheduleTx(Seconds(1.0));                             //need to add group send 
+    if (d_to_send.size()) {
+        shdr.SetData(d_to_send);
+        Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
+        packet->AddHeader(shdr);
+        m_txTrace(packet);
+        if(mod%4==0){
+            m_socket->Send(packet);
+            std::cout<<d_to_send[0]<<" Send First Connect "<<d_to_send.size()<< "\n";
+            ScheduleTx(Seconds(1.0));  
+        }
+        else if(mod%4==1){
+            m_socket = t_socket.at(OtherClientNumber);
+            m_socket->Send(packet);
+            std::cout<<d_to_send[0]<<" Send Personal "<<d_to_send.size()<< "\n";
+            ScheduleTx(Seconds(1.0));  
+        }
+        else {
+            for(uint32_t i = chatroom[SentRoom].begin();i!=chatroom[SentRoom].end();i++){
+                m_socket = t_socket.at(i);
+                m_socket->Send(packet);
+                std::cout<<d_to_send[0]<<" Send Group "<<d_to_send.size()<< "\n";
+                ScheduleTx(Seconds(1.0));  
+            }
+        }                 
+    }
 }
 
 void ChatServer::HandleRead(Ptr<Socket> socket){
@@ -134,7 +151,6 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             if(mod%4==0){
                 ClientNumber = cliendId.size()+1;   //give id
                 clientId.push_back(std::make_pair(m_address, m_port));
-             //   clientId.insert(std::make_pair(m,m_address));
             }
             else if(mod%4==1){
                 OtherClientNumber = _data[1];
@@ -147,11 +163,12 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             else{
                 SentRoom = chatroom.size()+1; // make chatroom
                 ClientNumber = _data[2];
-                for(uint32_t i = data.begin()+1; i !=data.end();i++){
+                for(uint32_t i = _data.begin()+1; i !=_data.end();i++){
                     chatroom[SentRoom].push_back(i);
                 }
                  
             }
+            t_socket.insert(ClientNumber,m_socket);
         }
     }
     std::cout<< "recieved\n";
