@@ -106,6 +106,8 @@ void ChatClient::SendPacket(void){
             //select K members from otherClient
             //push_back all of them.
         }
+        d_to_send.push_back(ClientNumber);
+        // Attach current client number
     
     }
     shdr.SetData(d_to_send);
