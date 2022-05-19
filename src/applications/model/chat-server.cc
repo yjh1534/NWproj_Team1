@@ -43,12 +43,12 @@ ChatServer::ChatServer()
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
+    r_socket(0),
     m_sendEvent(EventId()),
+    mod(0)
     clientId(0),
     chatroom(100),
-    personal(0),
-    group(0),
-    init(0)
+    newClient(0)
 
 {
     NS_LOG_FUNCTION(this);
@@ -78,7 +78,6 @@ void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
     s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
 }
 
-
 void ChatServer::ScheduleTx(Time dt){
     m_sendEvent = Simulator::Schedule(dt, &ChatServer::SendPacket, this);
 }
@@ -88,35 +87,28 @@ void ChatServer::SendPacket(void){
     Ptr<Packet> packet = Create<Packet> (m_packetSize);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
-    if(personal==1){          //personal chat
-        d_to_send.push_back(1);
-        d_to_send.push_back(OtherClientNumber);
-        personal = 0;
-        OtherClientNumber=0;
-    }
-    if(group!=0){           //group chat
-        d_to_send.push_back(2);
-        d_to_send.push_back(ClientNumber); 
-        d_to_send.push_back(group);
-        group = 0;
-    }
-    if(initid!=0){            //first connect give id
+
+    if(mod%4==0){            //first connect give id
         d_to_send.push_back(0);
-        d_to_send.push_back(initid);
-        initid=0;
-    }
-    if(initgr!=0){           //first connect in group chat 
-        d_to_send.push_back(3);
-        d_to_send.push_back(initgr);
         d_to_send.push_back(ClientNumber);
-        initgr = 0;
     }
-    if(nowgroup!=0){          //group out
-        d_to_send.push_back(4);
-        d_to_send.push_back(nowgroup);
-        d_to_send.push_back(ClientNumber); // Client id;
-        nowgroup = 0;
+    else if(mod%4==1){
+        d_to_send.push_back(1);
+        d_to_send.push_back(ClientNumber); //ip address need to change others
+        m_address = clientId[OtherClientNumber-1].first;
+        m_port = clientId[OtherClientNumber-1].second;
     }
+    else if (mod%4==2)
+    {
+        d_to_send.push_back(2);
+        d_to_send.push_back(ClientNumber);
+        d_to_send.push_back(SentRoom);
+    }
+    else{
+        d_to_send.push_back(3);
+        d_to_send.push_back(SentRoom);
+    }
+    
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
     packet->AddHeader(shdr);
@@ -138,37 +130,27 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             packet->RemoveHeader(hdr);
             std::vector<uint32_t> _data;
             _data = hdr.GetData();
-            uint32_t m = _data[0];
-            std::vector<uint32_t> tmp;
-            if(m==0){
+            mod = _data[0];
+            if(mod%4==0){
                 ClientNumber = cliendId.size()+1;   //give id
-                tmp.push_back(ClientNumber);
-                tmp.push_back(m_address);
-                clienId.push_back(tmp);
-                initid = 1;
+                clientId.push_back(std::make_pair(m_address, m_port));
+             //   clientId.insert(std::make_pair(m,m_address));
             }
-            else if(m==1){
-                personal = 1;
-         //       SentMsg = data[1];
+            else if(mod%4==1){
                 OtherClientNumber = _data[1];
                 ClientNumber = _data[2];   
             }
-            else if(m==2){
-                group = _data[1];
+            else if(mod%4==2){
                 SentRoom = _data[1];
                 ClientNumber = _data[2];
             }
-            else if(m==3){
-                uint32_t tm = _data[1];
-                ClientNumber = _data[2];
-                chatroom[tm].push_back(ClientNumber); //client id
-                initgr = tm;
-            }
             else{
-                uint32_t tm = _data[1];   
+                SentRoom = chatroom.size()+1; // make chatroom
                 ClientNumber = _data[2];
-                nowgroup = tm;  
-                chatroom.erase(remove(chatroom.begin(), chatroom.end(), tm), chatroom.end());
+                for(uint32_t i = data.begin()+1; i !=data.end();i++){
+                    chatroom[SentRoom].push_back(i);
+                }
+                 
             }
         }
     }
