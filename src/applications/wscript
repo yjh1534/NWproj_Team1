@@ -26,8 +26,8 @@ def build(bld):
         'helper/udp-echo-helper.cc',
         'helper/three-gpp-http-helper.cc',
         'helper/chat-client-helper.cc',
-        'model/chat-server-test.cc',
-        'helper/chat-server-test-helper.cc'
+        'model/chat-server.cc',
+        'helper/chat-server-helper.cc'
     ]
 
     applications_test = bld.create_ns3_module_test_library('applications')
@@ -62,8 +62,8 @@ def build(bld):
         'helper/udp-echo-helper.h',
         'helper/three-gpp-http-helper.h',
         'helper/chat-client-helper.h',
-        'model/chat-server-test.h',
-        'helper/chat-server-test-helper.h'
+        'model/chat-server.h',
+        'helper/chat-server-helper.h'
         ]
     
     if (bld.env['ENABLE_EXAMPLES']):
