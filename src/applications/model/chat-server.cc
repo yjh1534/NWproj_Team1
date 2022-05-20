@@ -24,13 +24,12 @@ NS_LOG_COMPONENT_DEFINE ("ChatServerApplication");
 
 NS_OBJECT_ENSURE_REGISTERED (ChatServer);
 
-  need modified
 TypeId ChatServer::GetTypeId (void){
     static TypeId tid = TypeId ("ns3::ChatServer")
         .SetParent<Application>()
-        .AddConstructor<ChatClient>()
-        .AddAttribute("Address", "Client Address", AddressValue(),MakeAddressAccessor(&ChatServer::m_address), MakeAddressChecker())
+        .AddConstructor<ChatServer>()
         .AddAttribute("Port", "Client Port", UintegerValue(0), MakeUintegerAccessor(&ChatServer::m_port), MakeUintegerChecker<uint16_t> ())
+        .AddAttribute("SocketNumber","max Socket", UintegerValue(0), MakeUintegerAccessor(&ChatServer::n_socket), MakeUintegerChecker<uint32_t>())
         .AddTraceSource("Tx", "Packet send", MakeTraceSourceAccessor(&ChatServer::m_txTrace), "ns3::Packet::TracedCallback")
          .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatServer::m_rxTrace), "ns3::Packet::TracedCallback")
 ;
@@ -39,136 +38,112 @@ TypeId ChatServer::GetTypeId (void){
 
 ChatServer::ChatServer()
     :ClientNumber(0),
-    m_packetSize(512),
+    m_packetSize(200),
     m_running(false),
     m_packetsSent(0), 
-    m_socket(0),
-    r_socket(0),
-    t_socket(0),
-    m_sendEvent(EventId()),
-    mod(0),
-    clientId(0),
-    chatroom(100)
-
+    t_socket({}),
+    m_sendEvent(EventId())
 {
     NS_LOG_FUNCTION(this);
+    ClientSocketmap.clear();
+    chatroom.clear();
 }
 
 void ChatServer::StartApplication(void)
 {
+    std::cout<<"Start Server\n";
     NS_LOG_FUNCTION(this);
-    if(!t_socket.size()){
+    for (uint32_t i= 0; i < n_socket; i++){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
-        m_socket = Socket::CreateSocket(GetNode(),tid);
-        r_socket = Socket::CreateSocket(GetNode(),tid);
-        r_socket->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port));
-        if (m_socket->Bind() == -1)
-            NS_FATAL_ERROR("Failed to bind");
-        m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port));
-    }
-    m_running = true;
-    if(r_socket->Listen() == -1)
-        std::cout<<"Failed\n";
-    r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
-    ScheduleTx (Seconds(1.0));
-    
+        t_socket.push_back(Socket::CreateSocket(GetNode(),tid));
+        if(t_socket.back()->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port + i)) == -1)
+            std::cout << "Bind Error for "<< m_port + i << "\n";
+        t_socket.back()->Close();
+        if(t_socket.back()->Listen() == -1)
+            std::cout<<"Listen Failed\n";
+        t_socket.back()->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
+    }    
 }
+
 void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
+    std::cout<<"Accpeted\n";
     s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
 }
 
-void ChatServer::ScheduleTx(Time dt){
-    m_sendEvent = Simulator::Schedule(dt, &ChatServer::SendPacket, this);
-}
-
-void ChatServer::SendPacket(void){
-    NS_LOG_FUNCTION(this);
-    Ptr<Packet> packet = Create<Packet> (m_packetSize);
+void ChatServer::SendPacket(std::vector<uint32_t> d_to_send){
     ChatHeader shdr;
-    std::vector<uint32_t> d_to_send;
+    shdr.SetData(d_to_send);
+    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
+    packet->AddHeader(shdr);
 
-    if(mod%4==0){            //first connect give id
-        d_to_send.push_back(0);
-        d_to_send.push_back(ClientNumber);
+    for (uint32_t i= 1 ; i < ClientNumber+1; ++i){
+        ClientSocketmap[i]->Send(packet);
     }
-    else if(mod%4==1){
-        d_to_send.push_back(1);
-        d_to_send.push_back(ClientNumber); //ip address need to change others
-    }
-    else if (mod%4==2)
-    {
-        d_to_send.push_back(2);
-        d_to_send.push_back(ClientNumber);
-        d_to_send.push_back(SentRoom);
-    }
-    else{
-        d_to_send.push_back(3);
-        d_to_send.push_back(SentRoom);
-    }
-    if (d_to_send.size()) {
-        shdr.SetData(d_to_send);
-        Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
-        packet->AddHeader(shdr);
-        m_txTrace(packet);
-        if(mod%4==0){
-            m_socket->Send(packet);
-            std::cout<<d_to_send[0]<<" Send First Connect "<<d_to_send.size()<< "\n";
-            ScheduleTx(Seconds(1.0));  
-        }
-        else if(mod%4==1){
-            m_socket = t_socket.at(OtherClientNumber);
-            m_socket->Send(packet);
-            std::cout<<d_to_send[0]<<" Send Personal "<<d_to_send.size()<< "\n";
-            ScheduleTx(Seconds(1.0));  
-        }
-        else {
-            for(uint32_t i = chatroom[SentRoom].begin();i!=chatroom[SentRoom].end();i++){
-                m_socket = t_socket.at(i);
-                m_socket->Send(packet);
-                std::cout<<d_to_send[0]<<" Send Group "<<d_to_send.size()<< "\n";
-                ScheduleTx(Seconds(1.0));  
-            }
-        }                 
-    }
+    std::cout<<"Server Send New Client "<<ClientNumber<<" to all "<<packet->GetSize()<<" \n";
 }
+void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d_to_send){
+    ChatHeader shdr;
+    shdr.SetData(d_to_send);
+    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
+    packet->AddHeader(shdr);
+    if(is_room){
+        for(uint32_t i=0; i < chatroom[dest].size(); i++){
+            ClientSocketmap[chatroom[dest][i]]->Send(packet);
+        }
+        std::cout<<"Message to Room "<<dest<<" from "<<d_to_send.back()<<"\n";
+   }
+    else{
+        ClientSocketmap[dest]->Send(packet);
+         std::cout<<"Message to "<<dest<<" from "<<d_to_send.back()<<"\n";
+   }
+}   
 
 void ChatServer::HandleRead(Ptr<Socket> socket){
     Ptr<Packet> packet;
     Address from;
-    while ((packet = m_socket->Recv()))
+    while ((packet = socket->Recv()))
     {
         if(packet->GetSize() > 0)
         {
             m_rxTrace(packet);
             ChatHeader hdr;
             packet->RemoveHeader(hdr);
-            std::vector<uint32_t> _data;
+            std::vector<uint32_t> _data = {};
+            std::vector<uint32_t> d = {};
             _data = hdr.GetData();
-            mod = _data[0];
-            if(mod%4==0){
-                ClientNumber = cliendId.size()+1;   //give id
-                clientId.push_back(std::make_pair(m_address, m_port));
+            uint32_t mod = _data[0];
+            d.push_back(mod);
+            if(mod==0){
+                ClientNumber++;
+                ClientSocketmap[ClientNumber] = socket;
+                d.push_back(ClientNumber);
+                std::cout<<"Received New Client : "<<ClientNumber<<"\n";
+                SendPacket(d);
             }
-            else if(mod%4==1){
-                OtherClientNumber = _data[1];
-                ClientNumber = _data[2];   
+            else if(mod==1){
+                //data[1] : Destination
+                d.push_back(_data[2]);
+                 std::cout<<"Server: 1to1 from"<< _data[2] << " to "<< _data[1]<<"\n";
+                SendPacket(false, _data[1], d);
             }
-            else if(mod%4==2){
-                SentRoom = _data[1];
-                ClientNumber = _data[2];
+            else if(mod==2){
+                d.push_back(_data[2]);
+                d.push_back(_data[1]);
+                 std::cout<<"Server: Room from"<< _data[2] << " to Room "<< _data[1]<<"\n";
+                SendPacket(true, _data[1], d);
             }
             else{
-                SentRoom = chatroom.size()+1; // make chatroom
-                ClientNumber = _data[2];
-                for(uint32_t i = _data.begin()+1; i !=_data.end();i++){
-                    chatroom[SentRoom].push_back(i);
+                std::vector<uint32_t> new_members;
+                for(uint32_t i = 1; i < _data.size();i++){
+                    new_members.push_back(_data[i]);
                 }
-                 
+                d.push_back(chatroom.size());
+                chatroom.push_back(new_members);
+                std::cout<<"Server: Invite from"<< _data.back() << " to Room"<< d.back()<<"\n";
+                SendPacket(true, d.back(), d);
             }
-            t_socket.insert(ClientNumber,m_socket);
         }
     }
-    std::cout<< "recieved\n";
 }
 
 void ChatServer::StopApplication (void){
@@ -177,8 +152,8 @@ void ChatServer::StopApplication (void){
     if(m_sendEvent.IsRunning()){
         Simulator::Cancel(m_sendEvent);
     }
-    if(m_socket){
-        m_socket->Close();
-        r_socket->Close();
+    if(t_socket[0]){
+        for (uint32_t i = 0; i < t_socket.size(); ++i)
+            t_socket[i]->Close();
     }
 }

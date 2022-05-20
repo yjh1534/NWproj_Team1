@@ -41,7 +41,7 @@ TypeId ChatClient::GetTypeId (void){
 
 ChatClient::ChatClient()
     :ClientNumber(0),
-    m_packetSize(512),
+    m_packetSize(200),
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
@@ -49,6 +49,7 @@ ChatClient::ChatClient()
     m_sendEvent(EventId())
 {
     NS_LOG_FUNCTION(this);
+    otherClients.clear();
 }
 
 void ChatClient::StartApplication(void)
@@ -59,19 +60,19 @@ void ChatClient::StartApplication(void)
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         m_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket = Socket::CreateSocket(GetNode(),tid);
-        r_socket->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port));
-        r_socket->Close();
-        if(m_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port)) == -1)
+        r_socket->Bind();
+     r_socket->SetConnectCallback(MakeCallback(&ChatClient::onAccept, this), MakeNullCallback <void, Ptr<Socket>>());
+        if(r_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port)) == -1)
             std::cout << "failed connected\n";
     }
     m_running = true;
-    if(r_socket->Listen() == -1)
-        std::cout<<"Failed\n";
-    r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatClient::onAccept, this));
+//    r_socket->Close();
+//    r_socket->Listen();
+    //r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatClient::onAccept, this));
     ScheduleTx (Seconds(1.0));
 }
-void ChatClient::onAccept(Ptr<Socket> s, const Address& from){
-    std::cout << "AAA\n";
+void ChatClient::onAccept(Ptr<Socket> s){
+    std::cout << "Client Connected Server\n";
     s->SetRecvCallback(MakeCallback(&ChatClient::HandleRead, this));
 }
 
@@ -87,26 +88,32 @@ void ChatClient::SendPacket(void){
     uint32_t send_prob = rand() % 100;
     // Send packet by 50% probability.
     if (send_prob) {
-        if (ClientNumber == 0)
+        if (ClientNumber == 0){
             d_to_send.push_back(0);
+            std::cout<<"First Message to Server "<< m_port<<"\n";
+        }
         
         else {
-            uint32_t m = (uint32_t)std::rand() % 100;
+            uint32_t m = rand() % 100;
             if (m < 95){
                 //send 1:1 message
-                if(otherClients.size() && m < 60){
+                if(!otherClients.empty() && m < 60){
                     d_to_send.push_back(1);
                     uint32_t n = rand() % otherClients.size();
-                    d_to_send.push_back(n);
+                    std::cout<<"111\n";
+                    d_to_send.push_back(otherClients[n]);
                     d_to_send.push_back(ClientNumber); // Attach current client number
+
+                    std::cout<<"Clients "<<ClientNumber<<" Send 1:1 message to "<< n << "\n";
                 }
                 //send n:n message
                 else if (!ChatRoom.empty()) {
                     d_to_send.push_back(2);
                     uint32_t n = rand() % ChatRoom.size();
-                    d_to_send.push_back(n);
+                    d_to_send.push_back(ChatRoom[n]);
                     d_to_send.push_back(ClientNumber); // Attach current client number
                     //d_to_send.push_back(#random chat room in ChatRoom);
+                     std::cout<<"Clients "<<ClientNumber<<" Send message to "<< n <<"room\n";
                 }
             }
 
@@ -120,17 +127,17 @@ void ChatClient::SendPacket(void){
                 for (uint32_t i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
                 // Attach current client number
                 d_to_send.push_back(ClientNumber);
+                std::cout<<"Clients "<<ClientNumber<<" Send invite to "<< n <<" friends\n";
             }
         }
 
         // Send packet when d_to_send is not empty
-        if (d_to_send.size()) {
+        if (!d_to_send.empty()) {
             shdr.SetData(d_to_send);
-            Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
+            Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4 - 4); 
             packet->AddHeader(shdr);
             m_txTrace(packet);
-            m_socket->Send(packet);
-            std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
+            r_socket->Send(packet);
         }
     }
     ScheduleTx(Seconds(1.0));
@@ -146,8 +153,12 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             m_rxTrace(packet);
             ChatHeader hdr;
             packet->RemoveHeader(hdr);
-            std::vector<uint32_t> _data;
+            std::vector<uint32_t> _data = {};
             _data = hdr.GetData();
+            if (_data.empty()){
+                std::cout<<"Invalid Header \n";
+                return;
+            }
             uint32_t m = _data[0];
 
             // Get Client number from server
@@ -157,27 +168,32 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
                 if (!ClientNumber) {
                     ClientNumber = receivedClientNumber;
                     for (uint32_t i = 1; i < ClientNumber; i++) otherClients.push_back(i);
+                    std::cout<<"Clients "<<ClientNumber<<" Get Client Number\n";
                 }
                 // Add new clients in other clients vector
-                else 
+                else{ 
                     otherClients.push_back(receivedClientNumber);
+                    std::cout<<"Clients "<<ClientNumber<<" Added New Friend "<< receivedClientNumber<<"\n";
+                }
             }
             //Receive 1:1 message
             else if (m == 1){
                 SentClient = _data[1]; 
+                     std::cout<<"Clients "<<ClientNumber<<" Recevied 1:1 message from"<< SentClient<<"\n";
             }
             //Receive n:n message
             else if (m == 2){
                 SentClient = _data[1];
                 SentRoom = _data[2];
+                std::cout<<"Clients "<<ClientNumber<<" Received message from "<<SentClient<<"in room"<< SentRoom<<"\n";
             }
             //Receive invitation to chatting room
             else if (m == 3){
                 ChatRoom.push_back(_data[1]);
+                std::cout<<"Clients "<<ClientNumber<<" invited to room"<< _data[1] << "\n";
             }
         }
     }
-    std::cout<<ClientNumber<<"recieved\n";
 }
 
 void ChatClient::StopApplication (void){
