@@ -4,6 +4,7 @@ def build(bld):
     module = bld.create_ns3_module('applications', ['internet', 'config-store','stats'])
     module.source = [
         'model/chat-client.cc',
+	'model/chat-server.cc',
         'model/bulk-send-application.cc',
         'model/onoff-application.cc',
         'model/packet-sink.cc',
@@ -25,7 +26,8 @@ def build(bld):
         'helper/udp-client-server-helper.cc',
         'helper/udp-echo-helper.cc',
         'helper/three-gpp-http-helper.cc',
-        'helper/chat-client-helper.cc'
+        'helper/chat-client-helper.cc',
+	'helper/chat-server-helper.cc',
         ]
 
     applications_test = bld.create_ns3_module_test_library('applications')
@@ -38,6 +40,7 @@ def build(bld):
     headers.module = 'applications'
     headers.source = [
         'model/chat-client.h',
+	'model/chat-server.h',
         'model/bulk-send-application.h',
         'model/onoff-application.h',
         'model/packet-sink.h',
@@ -59,7 +62,8 @@ def build(bld):
         'helper/udp-client-server-helper.h',
         'helper/udp-echo-helper.h',
         'helper/three-gpp-http-helper.h',
-        'helper/chat-client-helper.h'
+        'helper/chat-client-helper.h',
+	'helper/chat-server-helper.h',
         ]
     
     if (bld.env['ENABLE_EXAMPLES']):

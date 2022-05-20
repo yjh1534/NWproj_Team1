@@ -87,9 +87,10 @@ void ChatClient::SendPacket(void){
     uint32_t send_prob = rand() % 100;
     // Send packet by 50% probability.
     if (send_prob < 50) {
-        if (ClientNumber == 0)
+        if (ClientNumber == 0){
             d_to_send.push_back(0);
-        
+	    d_to_send.push_back(send_prob);
+	}
         else {
             uint32_t m = (uint32_t)std::rand() % 100;
             if (m < 95){
@@ -117,7 +118,7 @@ void ChatClient::SendPacket(void){
                 uint32_t n = (rand() % ((otherClients.size() - MIN_MULTI_CHAT_CLI_NUM))) + (MIN_MULTI_CHAT_CLI_NUM); // MIN_MULTI_CHAT_CLI_NUM ~ (otherClients.size() - 1)
                 std::random_shuffle(otherClients.begin(), otherClients.end());
                 // select n members from otherClient
-                for (int i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
+                for (uint32_t i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
                 // Attach current client number
                 d_to_send.push_back(ClientNumber);
             }
@@ -130,7 +131,7 @@ void ChatClient::SendPacket(void){
             packet->AddHeader(shdr);
             m_txTrace(packet);
             m_socket->Send(packet);
-            std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
+            std::cout<<"Client Send "<< d_to_send[0]<< "\n";
         }
     }
     ScheduleTx(Seconds(1.0));
@@ -177,7 +178,7 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             }
         }
     }
-    std::cout<<ClientNumber<<"recieved\n";
+    std::cout<<"Client received "<<ClientNumber<<"\n";
 }
 
 void ChatClient::StopApplication (void){
