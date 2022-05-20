@@ -131,9 +131,9 @@ void ChatClient::SendPacket(void){
             m_txTrace(packet);
             m_socket->Send(packet);
             std::cout<<d_to_send[0]<<" Send "<<d_to_send.size()<< "\n";
-            ScheduleTx(Seconds(1.0));
         }
     }
+    ScheduleTx(Seconds(1.0));
 }
 
 void ChatClient::HandleRead(Ptr<Socket> socket){
