@@ -86,7 +86,7 @@ void ChatClient::SendPacket(void){
     std::vector<uint32_t> d_to_send;
     uint32_t send_prob = rand() % 100;
     // Send packet by 50% probability.
-    if (send_prob < 50) {
+    if (send_prob) {
         if (ClientNumber == 0)
             d_to_send.push_back(0);
         
@@ -117,7 +117,7 @@ void ChatClient::SendPacket(void){
                 uint32_t n = (rand() % ((otherClients.size() - MIN_MULTI_CHAT_CLI_NUM))) + (MIN_MULTI_CHAT_CLI_NUM); // MIN_MULTI_CHAT_CLI_NUM ~ (otherClients.size() - 1)
                 std::random_shuffle(otherClients.begin(), otherClients.end());
                 // select n members from otherClient
-                for (int i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
+                for (uint32_t i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
                 // Attach current client number
                 d_to_send.push_back(ClientNumber);
             }
