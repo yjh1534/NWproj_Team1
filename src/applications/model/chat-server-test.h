@@ -32,14 +32,15 @@ class TestServer : public Application
     private:
         virtual void StartApplication (void);
         virtual void StopApplication (void);
-
         void ScheduleTx(Time dt);
         void SendPacket(void);
         void HandleRead(Ptr<Socket> socket);
         void onAccept(Ptr<Socket> s, const Address& from);
         Address m_address;
         uint16_t m_port;
+        uint32_t mod;
         uint32_t ClientNumber;
+        uint32_t OtherClientNumber;
         std::vector<uint32_t> ChatRoom;
         std::vector<uint32_t> otherClients;
         uint32_t SentClient;
@@ -47,10 +48,12 @@ class TestServer : public Application
         uint32_t m_packetSize;
         bool m_running;
         uint32_t m_packetsSent;
+  //      std::vector<Ptr<Socket> > t_socket;
         Ptr<Socket> m_socket;
         std::vector<Ptr<Socket>> r_socket;
         EventId m_sendEvent;
-
+        std::vector<std::pair<Address, uint16_t> > clientId;
+        std::vector<std::vector<uint32_t> > chatroom;
         TracedCallback<Ptr<const Packet> > m_txTrace;
         TracedCallback<Ptr<const Packet> > m_rxTrace;
 };

@@ -38,13 +38,16 @@ TypeId TestServer::GetTypeId (void){
 }
 
 TestServer::TestServer()
-    :ClientNumber(0),
+    :mod(0),
+    ClientNumber(0),
     m_packetSize(512),
     m_running(false),
     m_packetsSent(0), 
     m_socket(0),
     r_socket({}),
-    m_sendEvent(EventId())
+    m_sendEvent(EventId()),
+    clientId({}),
+    chatroom(100)
 {
     NS_LOG_FUNCTION(this);
 }
@@ -93,37 +96,28 @@ void TestServer::ScheduleTx(Time dt){
 }
 
 void TestServer::SendPacket(void){
-    NS_LOG_FUNCTION(this);
-    //Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 8);
+NS_LOG_FUNCTION(this);
+   // Ptr<Packet> packet = Create<Packet> (m_packetSize);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
-    if(ClientNumber == 0){
+
+    if(mod%4==0){            //first connect give id
         d_to_send.push_back(0);
+        d_to_send.push_back(ClientNumber);
+    }
+    else if(mod%4==1){
+        d_to_send.push_back(1);
+        d_to_send.push_back(ClientNumber); //ip address need to change others
+    }
+    else if (mod%4==2)
+    {
+        d_to_send.push_back(2);
+        d_to_send.push_back(ClientNumber);
+        d_to_send.push_back(SentRoom);
     }
     else{
-        uint32_t m = (uint32_t)std::rand() % 100;
-        if (m < 90){
-            //send 1:1 message
-            if(ChatRoom.empty() || m < 60){
-                d_to_send.push_back(1);
-                //d_to_send.push_back(someone's number);
-            }
-            //send n:n message
-            else{
-                d_to_send.push_back(2);
-                //d_to_send.push_back(#random chat room in ChatRoom);
-            }
-        }
-        //Create new Room
-        else{
-            d_to_send.push_back(3);
-            //random integer K in (0, otherClient.size() )
-            //select K members from otherClient
-            //push_back all of them.
-        }
-        d_to_send.push_back(ClientNumber);
-        // Attach current client number
-    
+        d_to_send.push_back(3);
+        d_to_send.push_back(SentRoom);
     }
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 4); 
@@ -146,29 +140,28 @@ void TestServer::HandleRead(Ptr<Socket> socket){
             packet->RemoveHeader(hdr);
             std::vector<uint32_t> _data;
             _data = hdr.GetData();
-            uint32_t m = _data[0];
-            //Get Client number from server
-            if(m==0){
-                ClientNumber = _data[1];
+            mod = _data[0];
+            if(mod%4==0){
+                ClientNumber = clientId.size()+1;   //give id
+                clientId.push_back(std::make_pair(m_address, m_port));
             }
-            //Receive 1:1 message
-            else if (m==1){
-                SentClient = _data[1]; 
+            else if(mod%4==1){
+                OtherClientNumber = _data[1];
+                ClientNumber = _data[2];   
             }
-            //Receive n:n message
-            else if (m==2){
-                SentClient = _data[1];
-                SentRoom = _data[2];
+            else if(mod%4==2){
+                SentRoom = _data[1];
+                ClientNumber = _data[2];
             }
-            //Receive invitation to chatting room
-            else if (m==3){
-                ChatRoom.push_back(_data[1]);
+            else{
+                SentRoom = chatroom.size()+1; // make chatroom
+                ClientNumber = _data[2];
+                for(uint32_t i = 1; i <_data.size();i++){
+                    chatroom[SentRoom].push_back(_data[i]);
+                }
+                 
             }
-            //Receive New Client's info
-            else if (m==4){
-                otherClients.push_back(_data[0]);
-            }
-        std::cout<<"Port:"<<m_port<<" Mode: "<<_data[0] << "recieved\n";
+            std::cout<<"Port:"<<m_port<<" Mode: "<<_data[0] << "recieved\n";
         }
     }
 }
