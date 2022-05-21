@@ -87,10 +87,10 @@ void ChatClient::SendPacket(void){
     std::vector<uint32_t> d_to_send;
     uint32_t send_prob = rand() % 100;
     // Send packet by 50% probability.
-    if (send_prob) {
+    if (send_prob > 50) {
         if (ClientNumber == 0){
             d_to_send.push_back(0);
-            std::cout<<"First Message to Server "<< m_port<<"\n";
+            std::cout<<"First Message to Server from port " << m_port <<"\n";
         }
         
         else {
@@ -100,11 +100,11 @@ void ChatClient::SendPacket(void){
                 if(!otherClients.empty() && m < 60){
                     d_to_send.push_back(1);
                     uint32_t n = rand() % otherClients.size();
-                    std::cout<<"111\n";
+                    // std::cout<<"111\n";
                     d_to_send.push_back(otherClients[n]);
                     d_to_send.push_back(ClientNumber); // Attach current client number
 
-                    std::cout<<"Clients "<<ClientNumber<<" Send 1:1 message to "<< n << "\n";
+                    std::cout << "Client " << ClientNumber << " Send 1:1 message to " << n << "\n";
                 }
                 //send n:n message
                 else if (!ChatRoom.empty()) {
@@ -113,7 +113,7 @@ void ChatClient::SendPacket(void){
                     d_to_send.push_back(ChatRoom[n]);
                     d_to_send.push_back(ClientNumber); // Attach current client number
                     //d_to_send.push_back(#random chat room in ChatRoom);
-                     std::cout<<"Clients "<<ClientNumber<<" Send message to "<< n <<"room\n";
+                     std::cout << "Client " << ClientNumber << " Send message to room " << n << "\n";
                 }
             }
 
@@ -127,7 +127,7 @@ void ChatClient::SendPacket(void){
                 for (uint32_t i = 0; i < n; i++) d_to_send.push_back(otherClients.at(i));
                 // Attach current client number
                 d_to_send.push_back(ClientNumber);
-                std::cout<<"Clients "<<ClientNumber<<" Send invite to "<< n <<" friends\n";
+                std::cout<<"Client "<<ClientNumber<<" Send invite to "<< n <<" friends\n";
             }
         }
 
@@ -140,6 +140,7 @@ void ChatClient::SendPacket(void){
             r_socket->Send(packet);
         }
     }
+    // double_t next_time = ((double_t) ((rand() % 10) + 10)) / (double_t) 10;
     ScheduleTx(Seconds(1.0));
 }
 
@@ -168,29 +169,30 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
                 if (!ClientNumber) {
                     ClientNumber = receivedClientNumber;
                     for (uint32_t i = 1; i < ClientNumber; i++) otherClients.push_back(i);
-                    std::cout<<"Clients "<<ClientNumber<<" Get Client Number\n";
+                    std::cout<<"Client "<< ClientNumber << " Get Client Number\n";
                 }
                 // Add new clients in other clients vector
                 else{ 
                     otherClients.push_back(receivedClientNumber);
-                    std::cout<<"Clients "<<ClientNumber<<" Added New Friend "<< receivedClientNumber<<"\n";
+                    std::cout<<"Client "<< ClientNumber << " Added New Friend " << receivedClientNumber << "\n";
+                    // if (ClientNumber == 3) std::cout<<"\t\t\tClient "<< ClientNumber << " Added New Friend " << receivedClientNumber << "\n";
                 }
             }
             //Receive 1:1 message
             else if (m == 1){
                 SentClient = _data[1]; 
-                     std::cout<<"Clients "<<ClientNumber<<" Recevied 1:1 message from"<< SentClient<<"\n";
+                std::cout<<"Client "<< ClientNumber << " Recevied 1:1 message from "<< SentClient<<"\n";
             }
             //Receive n:n message
             else if (m == 2){
                 SentClient = _data[1];
                 SentRoom = _data[2];
-                std::cout<<"Clients "<<ClientNumber<<" Received message from "<<SentClient<<"in room"<< SentRoom<<"\n";
+                std::cout<<"Client "<< ClientNumber <<" Received message from "<< SentClient <<" in room "<< SentRoom<<"\n";
             }
             //Receive invitation to chatting room
             else if (m == 3){
                 ChatRoom.push_back(_data[1]);
-                std::cout<<"Clients "<<ClientNumber<<" invited to room"<< _data[1] << "\n";
+                std::cout<<"Client "<< ClientNumber <<" invited to room "<< _data[1] << "\n";
             }
         }
     }

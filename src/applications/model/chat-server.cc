@@ -66,35 +66,38 @@ void ChatServer::StartApplication(void)
 }
 
 void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
-    std::cout<<"Accpeted\n";
+    std::cout << "Accpeted\n";
     s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
 }
 
 void ChatServer::SendPacket(std::vector<uint32_t> d_to_send){
     ChatHeader shdr;
+    // if (!d_to_send.size()) std::cout << " data is empty!!!!!!!!\n"; 
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
     packet->AddHeader(shdr);
 
-    for (uint32_t i= 1 ; i < ClientNumber+1; ++i){
-        ClientSocketmap[i]->Send(packet);
+    for (uint32_t i= 1 ; i <= ClientNumber; ++i){
+        ClientSocketmap[i]->Send(packet->Copy());
+        // std::cout<<" Server Send New Client "<< ClientNumber <<" to Client "<< i << " with address " << ClientSocketmap[i] <<", Packet Size "<< packet->GetSize() << "\n";
     }
-    std::cout<<"Server Send New Client "<<ClientNumber<<" to all "<<packet->GetSize()<<" \n";
+    // std::cout<<" Server Send New Client "<< ClientNumber <<" to all "<< packet->GetSize() <<" \n";
 }
 void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d_to_send){
     ChatHeader shdr;
+    // if (!d_to_send.size()) std::cout << " data is empty!!!!!!!!\n"; 
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
     packet->AddHeader(shdr);
-    if(is_room){
+    if (is_room){
         for(uint32_t i=0; i < chatroom[dest].size(); i++){
-            ClientSocketmap[chatroom[dest][i]]->Send(packet);
+            ClientSocketmap[chatroom[dest][i]]->Send(packet->Copy());
         }
-        std::cout<<"Message to Room "<<dest<<" from "<<d_to_send.back()<<"\n";
+        std::cout << " Server Sends Message to Room " << dest << " from " << d_to_send.back() << "\n";
    }
     else{
         ClientSocketmap[dest]->Send(packet);
-         std::cout<<"Message to "<<dest<<" from "<<d_to_send.back()<<"\n";
+        std::cout << " Server Sends Message to "<< dest << " from " << d_to_send.back() << "\n";
    }
 }   
 
@@ -117,19 +120,19 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 ClientNumber++;
                 ClientSocketmap[ClientNumber] = socket;
                 d.push_back(ClientNumber);
-                std::cout<<"Received New Client : "<<ClientNumber<<"\n";
+                std::cout<<" Server Received New Client : "<<ClientNumber<<"\n";
                 SendPacket(d);
             }
             else if(mod==1){
                 //data[1] : Destination
                 d.push_back(_data[2]);
-                 std::cout<<"Server: 1to1 from"<< _data[2] << " to "<< _data[1]<<"\n";
+                 std::cout<<" Server: 1:1 Message from Client "<< _data[2] << " to Client "<< _data[1]<<"\n";
                 SendPacket(false, _data[1], d);
             }
             else if(mod==2){
                 d.push_back(_data[2]);
                 d.push_back(_data[1]);
-                 std::cout<<"Server: Room from"<< _data[2] << " to Room "<< _data[1]<<"\n";
+                 std::cout<<" Server: Group Message from Client"<< _data[2] << " to Room "<< _data[1]<<"\n";
                 SendPacket(true, _data[1], d);
             }
             else{
@@ -139,7 +142,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 }
                 d.push_back(chatroom.size());
                 chatroom.push_back(new_members);
-                std::cout<<"Server: Invite from"<< _data.back() << " to Room"<< d.back()<<"\n";
+                std::cout<<" Server: Group Creation from Client "<< _data.back() << " as Room "<< d.back()<<"\n";
                 SendPacket(true, d.back(), d);
             }
         }
