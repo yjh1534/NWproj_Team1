@@ -1,16 +1,16 @@
-# project ns (3.29) configured on Thu Mar 17 13:42:59 2022 by
-# waf 2.0.9 (abi 20, python 30609f0 on linux)
-# using ./waf configure --build-profile=debug --enable-examples --enable-tests configure
+# project ns (3.29) configured on Wed May 25 14:18:33 2022 by
+# waf 2.0.9 (abi 20, python 20711f0 on linux2)
+# using ./waf configure --build-profile=debug
 #
 ----------------------------------------
 Setting top to
-/root/ns-allinone-3.29/ns-3.29
+/home/sonjaewon_2015310342/network_project/project/NWproj_Team1
 ----------------------------------------
 Setting out to
-/root/ns-allinone-3.29/ns-3.29/build
+/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build
 ----------------------------------------
 Checking for 'gcc' (C compiler)
-find program=['gcc', 'cc'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='CC' -> ['/usr/bin/gcc']
+find program=['gcc', 'cc'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='CC' -> ['/usr/bin/gcc']
 ['/usr/bin/gcc', '-dM', '-E', '-']
 out: #define __SSP_STRONG__ 3
 #define __DBL_MIN_EXP__ (-1021)
@@ -360,14 +360,14 @@ out: #define __SSP_STRONG__ 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_RELEASE 3
 
-find program=['ar'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='AR' -> ['/usr/bin/ar']
+find program=['ar'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='AR' -> ['/usr/bin/ar']
 /usr/bin/gcc
 ----------------------------------------
 Checking for cc version
 7.5.0
 ----------------------------------------
 Checking for 'g++' (C++ compiler)
-find program=['g++', 'c++'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='CXX' -> ['/usr/bin/g++']
+find program=['g++', 'c++'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='CXX' -> ['/usr/bin/g++']
 ['/usr/bin/g++', '-dM', '-E', '-']
 out: #define __SSP_STRONG__ 3
 #define __DBL_MIN_EXP__ (-1021)
@@ -717,67 +717,479 @@ out: #define __SSP_STRONG__ 3
 #define __ATOMIC_ACQ_REL 4
 #define __ATOMIC_RELEASE 3
 
-find program=['ar'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='AR' -> ['/usr/bin/ar']
+find program=['ar'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='AR' -> ['/usr/bin/ar']
 /usr/bin/g++
 ------------------------------------------------------
 Checking for compilation flag -Wl,--soname=foo support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_fc4256fb64d7297a8db63be1eef14ced/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_fc4256fb64d7297a8db63be1eef14ced/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-Wl,--soname=foo', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking for compilation flag -std=c++11 support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_fc4256fb64d7297a8db63be1eef14ced/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_fc4256fb64d7297a8db63be1eef14ced/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/testbuild/test.cpp.1.o']
 ok
 ------------------------------------------------------
 Checking for program 'python'
 /usr/bin/python
-find program=['python'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='PYTHON' -> ['/usr/bin/python']
+find program=['python'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PYTHON' -> ['/usr/bin/python']
 ['/usr/bin/python', '-c', 'import imp;print(imp.get_tag())']
-out: cpython-36
+err: Traceback (most recent call last):
+  File "<string>", line 1, in <module>
+AttributeError: 'module' object has no attribute 'get_tag'
 
 ['/usr/bin/python', '-c', 'import sys\nfor x in sys.version_info: print(str(x))']
-out: 3
-6
-9
+out: 2
+7
+17
 final
 0
 
 ['/usr/bin/python', '-c', "from distutils.sysconfig import get_config_var, get_python_lib\n\nprint(repr(get_python_lib(standard_lib=0, prefix='/usr/local') or ''))"]
-err: Traceback (most recent call last):
-  File "<string>", line 1, in <module>
-ModuleNotFoundError: No module named 'distutils.sysconfig'
+out: '/usr/local/lib/python2.7/dist-packages'
 
-from /root/ns-allinone-3.29/ns-3.29/bindings/python: The distutils module is unusable: install "python-devel"?
+'/usr/local/lib/python2.7/dist-packages'
+
+['/usr/bin/python', '-c', "from distutils.sysconfig import get_config_var, get_python_lib\n\nprint(repr(get_python_lib(plat_specific=1, standard_lib=0, prefix='/usr/local') or ''))"]
+out: '/usr/local/lib/python2.7/dist-packages'
+
+'/usr/local/lib/python2.7/dist-packages'
+
+------------------------------------------------------
+Checking for python version >= 2.3
+2.7.17
+['/usr/bin/python', '-c', "from distutils.sysconfig import get_config_var, get_python_lib\n\nprint(repr(get_config_var('prefix') or ''))\nprint(repr(get_config_var('SO') or ''))\nprint(repr(get_config_var('LDFLAGS') or ''))\nprint(repr(get_config_var('LIBDIR') or ''))\nprint(repr(get_config_var('LIBPL') or ''))\nprint(repr(get_config_var('INCLUDEPY') or ''))\nprint(repr(get_config_var('Py_ENABLE_SHARED') or ''))\nprint(repr(get_config_var('MACOSX_DEPLOYMENT_TARGET') or ''))\nprint(repr(get_config_var('LDSHARED') or ''))\nprint(repr(get_config_var('CFLAGS') or ''))\nprint(repr(get_config_var('LDVERSION') or ''))"]
+out: '/usr'
+'.so'
+'-Wl,-Bsymbolic-functions -Wl,-z,relro'
+'/usr/lib'
+'/usr/lib/python2.7/config-x86_64-linux-gnu'
+'/usr/include/python2.7'
+1
+''
+'x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+'-fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+''
+
+'/usr'
+'.so'
+'-Wl,-Bsymbolic-functions -Wl,-z,relro'
+'/usr/lib'
+'/usr/lib/python2.7/config-x86_64-linux-gnu'
+'/usr/include/python2.7'
+1
+''
+'x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+'-fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+''
+
+Configuration returned from ['/usr/bin/python']:
+prefix = '/usr'
+SO = '.so'
+LDFLAGS = '-Wl,-Bsymbolic-functions -Wl,-z,relro'
+LIBDIR = '/usr/lib'
+LIBPL = '/usr/lib/python2.7/config-x86_64-linux-gnu'
+INCLUDEPY = '/usr/include/python2.7'
+Py_ENABLE_SHARED = 1
+MACOSX_DEPLOYMENT_TARGET = ''
+LDSHARED = 'x86_64-linux-gnu-gcc -pthread -shared -Wl,-O1 -Wl,-Bsymbolic-functions -Wl,-Bsymbolic-functions -Wl,-z,relro -fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+CFLAGS = '-fno-strict-aliasing -DNDEBUG -g -fwrapv -O2 -Wall -Wstrict-prototypes -Wdate-time -D_FORTIFY_SOURCE=2 -g -fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=. -fstack-protector-strong -Wformat -Werror=format-security  '
+LDVERSION = ''
+
+------------------------------------------------------
+python-config
+not found
+find program=['/usr/bin/python-config', 'python2.7-config', 'python-config-2.7', 'python2.7m-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PYTHON_CONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Could not find the program ['/usr/bin/python-config', 'python2.7-config', 'python-config-2.7', 'python2.7m-config']
+Unhandled flag '-Wall'
+Unhandled flag '-Wstrict-prototypes'
+Unhandled flag '-Wdate-time'
+Unhandled flag '-Wformat'
+Unhandled flag '-Werror=format-security'
+Unhandled flag 'x86_64-linux-gnu-gcc'
+Unhandled flag '-shared'
+Unhandled flag '-Wall'
+Unhandled flag '-Wstrict-prototypes'
+Unhandled flag '-Wdate-time'
+Unhandled flag '-Wformat'
+Unhandled flag '-Werror=format-security'
+Unhandled flag '-Wall'
+Unhandled flag '-Wstrict-prototypes'
+Unhandled flag '-Wdate-time'
+Unhandled flag '-Wformat'
+Unhandled flag '-Werror=format-security'
+
+
+# try again with -L$python_LIBDIR: ['/usr/lib']
+
+------------------------------------------------------
+Checking for library python2.7 in LIBDIR
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_0fdf0836c19a4719e044e7954c327d4e/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_0fdf0836c19a4719e044e7954c327d4e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_0fdf0836c19a4719e044e7954c327d4e/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_0fdf0836c19a4719e044e7954c327d4e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib', '-lpython2.7']
+err: /usr/bin/ld: cannot find -lpython2.7
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$python_LIBPL (some systems don't install the python library in $prefix/lib)
+
+------------------------------------------------------
+Checking for library python2.7 in python_LIBPL
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_8470f68f7b0e979c9e860b7ba5769e63/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_8470f68f7b0e979c9e860b7ba5769e63/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_8470f68f7b0e979c9e860b7ba5769e63/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_8470f68f7b0e979c9e860b7ba5769e63/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-lpython2.7']
+err: /usr/bin/ld: cannot find -lpython2.7
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$prefix/libs, and pythonXY name rather than pythonX.Y (win32)
+
+------------------------------------------------------
+Checking for library python2.7 in $prefix/libs
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_d66b47e11c3166a913540d05b2477dcf/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_d66b47e11c3166a913540d05b2477dcf/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_d66b47e11c3166a913540d05b2477dcf/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_d66b47e11c3166a913540d05b2477dcf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/libs', '-lpython2.7']
+err: /usr/bin/ld: cannot find -lpython2.7
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$python_LIBDIR: ['/usr/lib']
+
+------------------------------------------------------
+Checking for library python2.7m in LIBDIR
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_746a99830b2225e02d9354ab37ea1a8b/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_746a99830b2225e02d9354ab37ea1a8b/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_746a99830b2225e02d9354ab37ea1a8b/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_746a99830b2225e02d9354ab37ea1a8b/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib', '-lpython2.7m']
+err: /usr/bin/ld: cannot find -lpython2.7m
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$python_LIBPL (some systems don't install the python library in $prefix/lib)
+
+------------------------------------------------------
+Checking for library python2.7m in python_LIBPL
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_68cd00bb1c19d773cd0554e3d5345ee1/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_68cd00bb1c19d773cd0554e3d5345ee1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_68cd00bb1c19d773cd0554e3d5345ee1/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_68cd00bb1c19d773cd0554e3d5345ee1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-lpython2.7m']
+err: /usr/bin/ld: cannot find -lpython2.7m
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$prefix/libs, and pythonXY name rather than pythonX.Y (win32)
+
+------------------------------------------------------
+Checking for library python2.7m in $prefix/libs
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_a140c50eb87fee7d9e46e4f0b399fd19/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_a140c50eb87fee7d9e46e4f0b399fd19/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_a140c50eb87fee7d9e46e4f0b399fd19/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_a140c50eb87fee7d9e46e4f0b399fd19/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/libs', '-lpython2.7m']
+err: /usr/bin/ld: cannot find -lpython2.7m
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$python_LIBDIR: ['/usr/lib']
+
+------------------------------------------------------
+Checking for library python27 in LIBDIR
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_fa5d252dbfc12c54af2b72b8a0dbd715/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_fa5d252dbfc12c54af2b72b8a0dbd715/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_fa5d252dbfc12c54af2b72b8a0dbd715/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_fa5d252dbfc12c54af2b72b8a0dbd715/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib', '-lpython27']
+err: /usr/bin/ld: cannot find -lpython27
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$python_LIBPL (some systems don't install the python library in $prefix/lib)
+
+------------------------------------------------------
+Checking for library python27 in python_LIBPL
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_eede514901a81479db745829a4eac8c4/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_eede514901a81479db745829a4eac8c4/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_eede514901a81479db745829a4eac8c4/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_eede514901a81479db745829a4eac8c4/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/lib/python2.7/config-x86_64-linux-gnu', '-lpython27']
+err: /usr/bin/ld: cannot find -lpython27
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+# try again with -L$prefix/libs, and pythonXY name rather than pythonX.Y (win32)
+
+------------------------------------------------------
+Checking for library python27 in $prefix/libs
+==>
+
+int main(int argc, char **argv) {
+	(void)argc; (void)argv;
+	return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_b310be3df5f5eee1e7efecfc5bfb2328/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b310be3df5f5eee1e7efecfc5bfb2328/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_b310be3df5f5eee1e7efecfc5bfb2328/testbuild/testprog[0m
+
+['/usr/bin/g++', '-Wl,-Bsymbolic-functions', '-Wl,-z,relro', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b310be3df5f5eee1e7efecfc5bfb2328/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-L/usr/libs', '-lpython27']
+err: /usr/bin/ld: cannot find -lpython27
+collect2: error: ld returned 1 exit status
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+not found
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
+
+
+### LIB NOT FOUND
+
+Include path for Python extensions (found via distutils module): '/usr/include/python2.7'
+
+------------------------------------------------------
+Checking for header Python.h
+==>
+
+#include <Python.h>
+#ifdef __cplusplus
+extern "C" {
+#endif
+	void Py_Initialize(void);
+	void Py_Finalize(void);
+#ifdef __cplusplus
+}
+#endif
+int main(int argc, char **argv)
+{
+   (void)argc; (void)argv;
+   Py_Initialize();
+   Py_Finalize();
+   return 0;
+}
+
+<==
+[1/2] Compiling [32mbuild/.conf_check_d0b8ebdec694b3e05ed9b239282de47d/test.cpp[0m
+
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fno-strict-aliasing', '-g', '-fwrapv', '-O2', '-g', '-fdebug-prefix-map=/build/python2.7-oYYDrU/python2.7-2.7.17=.', '-fstack-protector-strong', '-fno-strict-aliasing', '-I/usr/include/python2.7', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DPYTHONDIR="/usr/local/lib/python2.7/dist-packages"', '-DPYTHONARCHDIR="/usr/local/lib/python2.7/dist-packages"', '-DNDEBUG', '-D_FORTIFY_SOURCE=2', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_d0b8ebdec694b3e05ed9b239282de47d/testbuild/test.cpp.1.o']
+err: ../test.cpp:2:10: fatal error: Python.h: No such file or directory
+ #include <Python.h>
+          ^~~~~~~~~~
+compilation terminated.
+
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+    bld.compile()
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+    raise Errors.BuildError(self.producer.error)
+BuildError: Build failed
+ -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
+
+Distutils not installed? Broken python installation? Get python-config now!
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/bindings/python: The configuration failed
 ------------------------------------------------------
 Checking boost includes
 headers not found, please provide a --boost-includes argument (see help)
-from /root/ns-allinone-3.29/ns-3.29/src: The configuration failed
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src: The configuration failed
 ------------------------------------------------------
 Checking boost includes
 headers not found, please provide a --boost-includes argument (see help)
-from /root/ns-allinone-3.29/ns-3.29/src: The configuration failed
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src: The configuration failed
 ------------------------------------------------------
 Checking for click location
 not found
 ------------------------------------------------------
 Checking for program 'pkg-config'
 not found
-find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='PKGCONFIG' -> None
-from /root/ns-allinone-3.29/ns-3.29/src/config-store: Could not find the program ['pkg-config']
+find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PKGCONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/config-store: Could not find the program ['pkg-config']
 ------------------------------------------------------
 Checking for program 'pkg-config'
 not found
-find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='PKGCONFIG' -> None
-from /root/ns-allinone-3.29/ns-3.29/src/config-store: Could not find the program ['pkg-config']
+find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PKGCONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/config-store: Could not find the program ['pkg-config']
 ------------------------------------------------------
 checking for uint128_t
 ==>
@@ -792,41 +1204,41 @@ checking for uint128_t
         }
         
 <==
-[1/2] Compiling [32mbuild/.conf_check_61285eca513fbd76177b29836efe4955/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_98d20448c110c9b57a90f3e5e1ac4efa/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_61285eca513fbd76177b29836efe4955/testbuild/test.cpp.1.o']
-err: ../test.cpp: In function 'int main(int, char**)':
-../test.cpp:6:7: error: 'uint128_t' was not declared in this scope
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_98d20448c110c9b57a90f3e5e1ac4efa/testbuild/test.cpp.1.o']
+err: ../test.cpp: In function ‘int main(int, char**)’:
+../test.cpp:6:7: error: ‘uint128_t’ was not declared in this scope
   if ((uint128_t *) 0) return 0;
        ^~~~~~~~~
-../test.cpp:6:7: note: suggested alternative: 'uint32_t'
+../test.cpp:6:7: note: suggested alternative: ‘uint32_t’
   if ((uint128_t *) 0) return 0;
        ^~~~~~~~~
        uint32_t
-../test.cpp:6:18: error: expected primary-expression before ')' token
+../test.cpp:6:18: error: expected primary-expression before ‘)’ token
   if ((uint128_t *) 0) return 0;
                   ^
-../test.cpp:6:20: error: expected ')' before numeric constant
+../test.cpp:6:20: error: expected ‘)’ before numeric constant
   if ((uint128_t *) 0) return 0;
                     ^
-../test.cpp:7:14: error: 'uint128_t' was not declared in this scope
+../test.cpp:7:14: error: ‘uint128_t’ was not declared in this scope
   if (sizeof (uint128_t)) return 0;
               ^~~~~~~~~
-../test.cpp:7:14: note: suggested alternative: 'uint32_t'
+../test.cpp:7:14: note: suggested alternative: ‘uint32_t’
   if (sizeof (uint128_t)) return 0;
               ^~~~~~~~~
               uint32_t
 
-from /root/ns-allinone-3.29/ns-3.29/src/core: Test does not build: Traceback (most recent call last):
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
     bld.compile()
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
-waflib.Errors.BuildError: Build failed
+BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /root/ns-allinone-3.29/ns-3.29/src/core: The configuration failed
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: The configuration failed
 ------------------------------------------------------
 checking for __uint128_t
 ==>
@@ -841,12 +1253,12 @@ checking for __uint128_t
         }
         
 <==
-[1/2] Compiling [32mbuild/.conf_check_c1f0b685ace2057188afc871c3dc462f/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_d8b511a6697d28e5a0a5799198626f40/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_c1f0b685ace2057188afc871c3dc462f/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_c1f0b685ace2057188afc871c3dc462f/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_d8b511a6697d28e5a0a5799198626f40/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_d8b511a6697d28e5a0a5799198626f40/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_c1f0b685ace2057188afc871c3dc462f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_d8b511a6697d28e5a0a5799198626f40/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking high precision implementation
@@ -862,12 +1274,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_ab10809edf8631c417216d0cb1872390/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_b5500674d19b67054eeb23095a4b05fe/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header inttypes.h
@@ -880,12 +1292,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -898,24 +1310,24 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_003afa2ed9108c15142c942cc2b6d9ed/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f6d6062cfc5f882d0ccbf10659c7a04e/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_003afa2ed9108c15142c942cc2b6d9ed/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f6d6062cfc5f882d0ccbf10659c7a04e/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
  #include <sys/inttypes.h>
           ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /root/ns-allinone-3.29/ns-3.29/src/core: Test does not build: Traceback (most recent call last):
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
     bld.compile()
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
-waflib.Errors.BuildError: Build failed
+BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /root/ns-allinone-3.29/ns-3.29/src/core: The configuration failed
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: The configuration failed
 ------------------------------------------------------
 Checking for header sys/types.h
 ==>
@@ -927,12 +1339,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_757a1e5ad782c193c971277ff4ac8da9/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_1cf4bceab5c9ebf069b29748b991cf0e/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_757a1e5ad782c193c971277ff4ac8da9/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_757a1e5ad782c193c971277ff4ac8da9/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_1cf4bceab5c9ebf069b29748b991cf0e/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_1cf4bceab5c9ebf069b29748b991cf0e/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_757a1e5ad782c193c971277ff4ac8da9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_1cf4bceab5c9ebf069b29748b991cf0e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header sys/stat.h
@@ -945,12 +1357,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_1eefe991e1e10cacccf5bfdfeadd7662/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_7bed18591a227fb843968a94027e4068/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_1eefe991e1e10cacccf5bfdfeadd7662/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_1eefe991e1e10cacccf5bfdfeadd7662/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_7bed18591a227fb843968a94027e4068/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_7bed18591a227fb843968a94027e4068/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_1eefe991e1e10cacccf5bfdfeadd7662/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_7bed18591a227fb843968a94027e4068/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header dirent.h
@@ -963,12 +1375,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_3598595adb7c5ab132b44de7bde056c6/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_fa9f647ff4713fd53749299077226ec9/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_3598595adb7c5ab132b44de7bde056c6/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_3598595adb7c5ab132b44de7bde056c6/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_fa9f647ff4713fd53749299077226ec9/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_fa9f647ff4713fd53749299077226ec9/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_3598595adb7c5ab132b44de7bde056c6/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_fa9f647ff4713fd53749299077226ec9/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header stdlib.h
@@ -981,12 +1393,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2f4db7cad453afed459a3b3b22341a57/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_554269baca84943824a8d36dea6fd21a/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_2f4db7cad453afed459a3b3b22341a57/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2f4db7cad453afed459a3b3b22341a57/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_554269baca84943824a8d36dea6fd21a/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_554269baca84943824a8d36dea6fd21a/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_2f4db7cad453afed459a3b3b22341a57/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_554269baca84943824a8d36dea6fd21a/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header signal.h
@@ -999,12 +1411,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_65086d253aa5552914a3cd7266988bdf/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_06ac27d820b98830a2e68293eb7b6158/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_65086d253aa5552914a3cd7266988bdf/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_65086d253aa5552914a3cd7266988bdf/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_06ac27d820b98830a2e68293eb7b6158/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_06ac27d820b98830a2e68293eb7b6158/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_65086d253aa5552914a3cd7266988bdf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_06ac27d820b98830a2e68293eb7b6158/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header pthread.h
@@ -1019,12 +1431,12 @@ int main ()
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_e10c412b2f201646264b6bc35ef8068e/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f1b20f563830c81dc3b4825695db436f/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e10c412b2f201646264b6bc35ef8068e/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_e10c412b2f201646264b6bc35ef8068e/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f1b20f563830c81dc3b4825695db436f/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f1b20f563830c81dc3b4825695db436f/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e10c412b2f201646264b6bc35ef8068e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f1b20f563830c81dc3b4825695db436f/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header stdint.h
@@ -1037,12 +1449,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_ab10809edf8631c417216d0cb1872390/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_b5500674d19b67054eeb23095a4b05fe/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_INTTYPES_H=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_ab10809edf8631c417216d0cb1872390/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_b5500674d19b67054eeb23095a4b05fe/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header inttypes.h
@@ -1055,12 +1467,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_e8b197e46d5686568ea02a4da43c7ce0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_4e54e3574c7c2cd0be9ef508c461bbef/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header sys/inttypes.h
@@ -1073,24 +1485,24 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_003afa2ed9108c15142c942cc2b6d9ed/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f6d6062cfc5f882d0ccbf10659c7a04e/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_003afa2ed9108c15142c942cc2b6d9ed/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f6d6062cfc5f882d0ccbf10659c7a04e/testbuild/test.cpp.1.o']
 err: ../test.cpp:1:10: fatal error: sys/inttypes.h: No such file or directory
  #include <sys/inttypes.h>
           ^~~~~~~~~~~~~~~~
 compilation terminated.
 
-from /root/ns-allinone-3.29/ns-3.29/src/core: Test does not build: Traceback (most recent call last):
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: Test does not build: Traceback (most recent call last):
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Configure.py", line 324, in run_build
     bld.compile()
-  File "/root/ns-allinone-3.29/ns-3.29/.waf3-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
+  File "/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/.waf-2.0.9-897e824215d3dab2b64982d8af27db90/waflib/Build.py", line 176, in compile
     raise Errors.BuildError(self.producer.error)
-waflib.Errors.BuildError: Build failed
+BuildError: Build failed
  -> task in 'testprog' failed with exit status 1 (run with -v to display more information)
 
 not found
-from /root/ns-allinone-3.29/ns-3.29/src/core: The configuration failed
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/core: The configuration failed
 ------------------------------------------------------
 Checking for library rt
 ==>
@@ -1101,12 +1513,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_eeb585aa245a8fbf7bae6001c7747a7e/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_508ff9327ac4c799b54f57c19de517d1/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_eeb585aa245a8fbf7bae6001c7747a7e/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_eeb585aa245a8fbf7bae6001c7747a7e/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-pthread', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE___UINT128_T=1', '-DINT64X64_USE_128=1', '-DHAVE_SYS_TYPES_H=1', '-DHAVE_SYS_STAT_H=1', '-DHAVE_DIRENT_H=1', '-DHAVE_STDLIB_H=1', '-DHAVE_GETENV=1', '-DHAVE_SIGNAL_H=1', '-DHAVE_PTHREAD_H=1', '-DHAVE_STDINT_H=1', '-DHAVE_INTTYPES_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_508ff9327ac4c799b54f57c19de517d1/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_508ff9327ac4c799b54f57c19de517d1/testbuild/testprog[0m
 
-['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_eeb585aa245a8fbf7bae6001c7747a7e/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
+['/usr/bin/g++', '-pthread', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_508ff9327ac4c799b54f57c19de517d1/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic', '-lrt']
 yes
 ------------------------------------------------------
 Checking for header sys/ioctl.h
@@ -1119,12 +1531,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_4dde0b8f912a507f73c20bb51cc4d46d/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_f340a32e0ec74c1ab27c1cfc1e1a3087/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_4dde0b8f912a507f73c20bb51cc4d46d/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_4dde0b8f912a507f73c20bb51cc4d46d/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f340a32e0ec74c1ab27c1cfc1e1a3087/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_f340a32e0ec74c1ab27c1cfc1e1a3087/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_4dde0b8f912a507f73c20bb51cc4d46d/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f340a32e0ec74c1ab27c1cfc1e1a3087/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header net/if.h
@@ -1137,12 +1549,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_4000752d215b337db91b61f80988c34b/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_943ec6b51fec1a813c280b11ecff4c55/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_4000752d215b337db91b61f80988c34b/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_4000752d215b337db91b61f80988c34b/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_943ec6b51fec1a813c280b11ecff4c55/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_943ec6b51fec1a813c280b11ecff4c55/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_4000752d215b337db91b61f80988c34b/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_943ec6b51fec1a813c280b11ecff4c55/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header net/ethernet.h
@@ -1155,12 +1567,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_c8148d690b70afc24224041847006b41/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_726cd8fb7ff5c8585ad5a58d9a4912a5/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_c8148d690b70afc24224041847006b41/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_c8148d690b70afc24224041847006b41/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_726cd8fb7ff5c8585ad5a58d9a4912a5/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_726cd8fb7ff5c8585ad5a58d9a4912a5/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_c8148d690b70afc24224041847006b41/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_726cd8fb7ff5c8585ad5a58d9a4912a5/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header linux/if_tun.h
@@ -1173,12 +1585,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_2f7928c9afe96fa90923ee5a672704bf/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for header netpacket/packet.h
@@ -1191,12 +1603,12 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_2d8891d596e037f952b3e1c059735fe0/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_1e3478e7ddc19f4e2d7a029178f265bb/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_2d8891d596e037f952b3e1c059735fe0/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_2d8891d596e037f952b3e1c059735fe0/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_1e3478e7ddc19f4e2d7a029178f265bb/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_1e3478e7ddc19f4e2d7a029178f265bb/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_2d8891d596e037f952b3e1c059735fe0/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_1e3478e7ddc19f4e2d7a029178f265bb/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for NSC location
@@ -1204,8 +1616,8 @@ not found
 ------------------------------------------------------
 Checking for program 'pkg-config'
 not found
-find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='PKGCONFIG' -> None
-from /root/ns-allinone-3.29/ns-3.29/src/stats: Could not find the program ['pkg-config']
+find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PKGCONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1/src/stats: Could not find the program ['pkg-config']
 ------------------------------------------------------
 Checking for header linux/if_tun.h
 ==>
@@ -1217,71 +1629,70 @@ int main(int argc, char **argv) {
 }
 
 <==
-[1/2] Compiling [32mbuild/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/test.cpp[0m
+[1/2] Compiling [32mbuild/.conf_check_2f7928c9afe96fa90923ee5a672704bf/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/test.cpp.1.o']
-[2/2] Linking [33mbuild/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/testprog[0m
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/test.cpp.1.o']
+[2/2] Linking [33mbuild/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/testprog[0m
 
-['/usr/bin/g++', 'test.cpp.1.o', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_35e48dd4fc3a5dd6cc43ada29ce644c5/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
+['/usr/bin/g++', 'test.cpp.1.o', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_2f7928c9afe96fa90923ee5a672704bf/testbuild/testprog', '-Wl,-Bstatic', '-Wl,-Bdynamic']
 yes
 ------------------------------------------------------
 Checking for program 'sudo'
-not found
-find program=['sudo'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='SUDO' -> None
-from /root/ns-allinone-3.29/ns-3.29: Could not find the program ['sudo']
+/usr/bin/sudo
+find program=['sudo'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='SUDO' -> ['/usr/bin/sudo']
 ------------------------------------------------------
 Checking for program 'valgrind'
 not found
-find program=['valgrind'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='VALGRIND' -> None
-from /root/ns-allinone-3.29/ns-3.29: Could not find the program ['valgrind']
+find program=['valgrind'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='VALGRIND' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1: Could not find the program ['valgrind']
 ------------------------------------------------------
 Checking for program 'pkg-config'
 not found
-find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='PKGCONFIG' -> None
-from /root/ns-allinone-3.29/ns-3.29: Could not find the program ['pkg-config']
+find program=['pkg-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='PKGCONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1: Could not find the program ['pkg-config']
 ------------------------------------------------------
 python-config
 not found
-find program=['libgcrypt-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='LIBGCRYPT_CONFIG' -> None
-from /root/ns-allinone-3.29/ns-3.29: Could not find the program ['libgcrypt-config']
+find program=['libgcrypt-config'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='LIBGCRYPT_CONFIG' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1: Could not find the program ['libgcrypt-config']
 -------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_fc4256fb64d7297a8db63be1eef14ced/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_fc4256fb64d7297a8db63be1eef14ced/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/testbuild/test.cpp.1.o']
 ok
 -------------------------------------------------------
 Checking for compilation flag -fstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_abc6dbb9edd71245c011a9e228c7ef33/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_f0e6c6c86e02d003bee17579d7c65077/test.c[0m
 
-['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_abc6dbb9edd71245c011a9e228c7ef33/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-fstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f0e6c6c86e02d003bee17579d7c65077/testbuild/test.c.1.o']
 ok
 -------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_fc4256fb64d7297a8db63be1eef14ced/test.cpp[0m
+[1/1] Compiling [32mbuild/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/test.cpp[0m
 
-['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_fc4256fb64d7297a8db63be1eef14ced/testbuild/test.cpp.1.o']
+['/usr/bin/g++', '-O0', '-ggdb', '-g3', '-Wall', '-Werror', '-std=c++11', '-fstrict-aliasing', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.cpp', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_cd2ada6e1fbfc1b932d22fcfc403694d/testbuild/test.cpp.1.o']
 ok
 -------------------------------------------------------
 Checking for compilation flag -Wstrict-aliasing support
 ==>
 int main() { return 0; }
 <==
-[1/1] Compiling [32mbuild/.conf_check_abc6dbb9edd71245c011a9e228c7ef33/test.c[0m
+[1/1] Compiling [32mbuild/.conf_check_f0e6c6c86e02d003bee17579d7c65077/test.c[0m
 
-['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/root/ns-allinone-3.29/ns-3.29/build/.conf_check_abc6dbb9edd71245c011a9e228c7ef33/testbuild/test.c.1.o']
+['/usr/bin/gcc', '-Wstrict-aliasing', '-DNS3_BUILD_PROFILE_DEBUG', '-DNS3_ASSERT_ENABLE', '-DNS3_LOG_ENABLE', '-DHAVE_SYS_IOCTL_H=1', '-DHAVE_IF_NETS_H=1', '-DHAVE_NET_ETHERNET_H=1', '-DHAVE_PACKET_H=1', '-DHAVE_IF_TUN_H=1', '../test.c', '-c', '-o/home/sonjaewon_2015310342/network_project/project/NWproj_Team1/build/.conf_check_f0e6c6c86e02d003bee17579d7c65077/testbuild/test.c.1.o']
 ok
 -------------------------------------------------------
 Checking for program 'doxygen'
 not found
-find program=['doxygen'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin'] var='DOXYGEN' -> None
-from /root/ns-allinone-3.29/ns-3.29: Could not find the program ['doxygen']
+find program=['doxygen'] paths=['/usr/local/sbin', '/usr/local/bin', '/usr/sbin', '/usr/bin', '/sbin', '/bin', '/usr/games', '/usr/local/games', '/mnt/c/Program Files/WindowsApps/CanonicalGroupLimited.Ubuntu18.04onWindows_1804.2020.827.0_x64__79rhkp1fndgsc', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/bin', '/mnt/c/Program Files/NVIDIA GPU Computing Toolkit/CUDA/v11.6/libnvvp', '/mnt/c/WINDOWS/system32', '/mnt/c/WINDOWS', '/mnt/c/WINDOWS/System32/Wbem', '/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/', '/mnt/c/WINDOWS/System32/OpenSSH/', '/mnt/c/Program Files/Bandizip/', '/mnt/c/Program Files/NVIDIA Corporation/Nsight Compute 2022.1.1/', '/mnt/c/Program Files (x86)/NVIDIA Corporation/PhysX/Common', '/mnt/c/Program Files/NVIDIA Corporation/NVIDIA NvDLISR', '/mnt/c/Program Files/Git/cmd', '/mnt/c/Program Files/MATLAB/R2022a/bin', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/Scripts/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Python/Python310/', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Microsoft/WindowsApps', '/mnt/c/Users/\xec\x86\x90\xec\x9e\xac\xec\x9b\x90/AppData/Local/Programs/Microsoft VS Code/bin', '/snap/bin'] var='DOXYGEN' -> None
+from /home/sonjaewon_2015310342/network_project/project/NWproj_Team1: Could not find the program ['doxygen']

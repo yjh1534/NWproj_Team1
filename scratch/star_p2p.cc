@@ -67,7 +67,7 @@ main (int argc, char *argv [])
     /* Set etc */
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
 
-    p2p.EnablePcapAll ("bus_p2p");
+    p2p.EnablePcapAll ("star_p2p");
 
     Simulator::Run ();
     Simulator::Destroy ();
