@@ -45,7 +45,7 @@ main (int argc, char *argv[])
     ApplicationContainer clientApps[client_n];
     for (int i = 0; i < (int) client_n; i++){
         ChatClientHelper chatClient (interface.GetAddress (0), port + i);
-        clientApps[i].Add (chatClient.Install (nodes.Get (i))); 
+        clientApps[i].Add (chatClient.Install (nodes.Get (i+1))); 
         clientApps[i].Start (Seconds (2.0 + ((double_t) i / 10)));
         clientApps[i].Stop (Seconds (10.0));
     }
@@ -58,6 +58,8 @@ main (int argc, char *argv[])
     serverApp.Stop (Seconds (10.0));
 
     /* Set etc */
+    Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
+
     csma.EnablePcapAll ("star", false);
 
     Simulator::Run ();
