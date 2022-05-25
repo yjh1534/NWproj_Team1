@@ -1,0 +1,101 @@
+#include <iostream>
+#include <fstream>
+#include "ns3/core-module.h"
+#include "ns3/network-module.h"
+#include "ns3/applications-module.h"
+#include "ns3/wifi-module.h"
+#include "ns3/mobility-module.h"
+#include "ns3/internet-module.h"
+#include "ns3/ipv4-global-routing-helper.h"
+
+using namespace ns3;
+
+int
+main (int argc, char *argv [])
+{
+    RngSeedManager::SetSeed(15);
+
+    uint32_t client_n = 4;
+
+    CommandLine cmd;
+    cmd.Parse (argc, argv);
+
+    /* Create nodes */
+    NodeContainer clientNodes;
+    clientNodes.Create (client_n);
+
+    NodeContainer serverNode;
+    serverNode.Create (1);
+
+    /* Set PHY layer */
+    YansWifiChannelHelper channel = YansWifiChannelHelper::Default ();
+    YansWifiPhyHelper phy = YansWifiPhyHelper::Default ();
+    phy.SetChannel (channel.Create ());
+
+    /* Set MAC layer */
+    WifiMacHelper mac;
+    Ssid ssid = Ssid("wifi_ad");
+    mac.SetType ("ns3::AdhocWifiMac");
+
+    /* Set WLAN */
+    WifiHelper wifi;
+    wifi.SetStandard (WIFI_PHY_STANDARD_80211n_5GHZ);
+    wifi.SetRemoteStationManager ("ns3::ConstantRateWifiManager", "DataMode", StringValue ("OfdmRate54Mbps"));
+
+    /* Set Devices */
+    NetDeviceContainer clientDevices;
+    clientDevices = wifi.Install (phy, mac, clientNodes);
+
+    NetDeviceContainer serverDevice;
+    serverDevice = wifi.Install (phy, mac, serverNode);
+
+    /* Set internet */
+    InternetStackHelper stack;
+    stack.Install (clientNodes);
+    stack.Install (serverNode);
+
+    /* Set ip */
+    Ipv4AddressHelper address;
+
+    address.SetBase ("192.168.1.0", "255.255.255.0");
+    Ipv4InterfaceContainer clientInterfaces;
+    clientInterfaces = address.Assign (clientDevices);
+    Ipv4InterfaceContainer serverInterface;
+    serverInterface = address.Assign (serverDevice);
+
+    /* Set mobility */
+    MobilityHelper mobility;
+    Ptr<ListPositionAllocator> positionAlloc = CreateObject<ListPositionAllocator> ();
+
+    positionAlloc->Add (Vector(0.0, 0.0, 0.0));
+    positionAlloc->Add (Vector(1.0, 0.0, 0.0));
+    mobility.SetPositionAllocator (positionAlloc);
+
+    mobility.SetMobilityModel ("ns3::ConstantPositionMobilityModel");
+    mobility.Install (clientNodes);
+    mobility.Install (serverNode);
+    
+    /* Set client */
+    uint16_t port = 9;
+    ApplicationContainer clientApps[client_n];
+    for (int i = 0; i < (int) client_n; i++){
+        ChatClientHelper chatClient (serverInterface.GetAddress(0), port + i);
+        clientApps[i].Add(chatClient.Install (clientNodes.Get (i))); 
+        clientApps[i].Start (Seconds (2.0 + ((double_t) i / 10)));
+        clientApps[i].Stop (Seconds (10.0));
+    }
+
+    /* Set server */
+    ChatServerHelper chatServer (port, client_n);
+
+    ApplicationContainer serverApp = chatServer.Install (serverNode.Get (0));
+    serverApp.Start (Seconds (1.0));
+    serverApp.Stop (Seconds (10.0));
+
+    /* Set etc */
+    Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
+
+    Simulator::Run ();
+    Simulator::Destroy ();
+    return 0;
+}
