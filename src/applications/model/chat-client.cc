@@ -61,7 +61,7 @@ void ChatClient::StartApplication(void)
         m_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket->Bind();
-     r_socket->SetConnectCallback(MakeCallback(&ChatClient::onAccept, this), MakeNullCallback <void, Ptr<Socket>>());
+        r_socket->SetConnectCallback(MakeCallback(&ChatClient::onAccept, this), MakeNullCallback <void, Ptr<Socket>>());
         if(r_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port)) == -1)
             std::cout << "failed connected\n";
     }
@@ -109,7 +109,7 @@ void ChatClient::SendPacket(void){
                 //send n:n message
                 else if (!ChatRoom.empty()) {
                     d_to_send.push_back(2);
-                    uint32_t n = rand() % ChatRoom.size();
+                    uint32_t n = rand() % ChatRoom.size(); 
                     d_to_send.push_back(ChatRoom[n]);
                     d_to_send.push_back(ClientNumber); // Attach current client number
                     //d_to_send.push_back(#random chat room in ChatRoom);
@@ -182,18 +182,25 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             else if (m == 1){
                 SentClient = _data[1]; 
                 std::cout<<"Client "<< ClientNumber << " Recevied 1:1 message from "<< SentClient<<"\n";
+                NS_LOG_INFO("1:1msg\t" << Simulator::Now().GetSeconds()<< "\t" << "Client "<< ClientNumber << " Recevied 1:1 message from "<< SentClient);
             }
             //Receive n:n message
             else if (m == 2){
                 SentClient = _data[1];
                 SentRoom = _data[2];
                 std::cout<<"Client "<< ClientNumber <<" Received message from "<< SentClient <<" in room "<< SentRoom<<"\n";
+                NS_LOG_INFO("room" << SentRoom << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client "<< ClientNumber <<" Received message from "<< SentClient);
             }
             //Receive invitation to chatting room
             else if (m == 3){
                 ChatRoom.push_back(_data[1]);
                 std::cout<<"Client "<< ClientNumber <<" invited to room "<< _data[1] << "\n";
+                NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client "<< ClientNumber << " invited");
             }
+                /////////////////////////////////////////////////
+                //   LOG: receive info                         //
+                //   room_num 1 -> 2: message transmit info    //
+                /////////////////////////////////////////////////
         }
     }
 }

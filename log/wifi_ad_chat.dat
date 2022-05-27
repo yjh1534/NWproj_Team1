@@ -1,0 +1,108 @@
+1:1msg 4.10006 Client 2 send to Client7
+1:1msg 4.10034 Client 7 Recevied 1:1 message from 2
+1:1msg 5.00006 Client 1 send to Client10
+1:1msg 5.00024 Client 10 Recevied 1:1 message from 1
+1:1msg 5.20006 Client 3 send to Client7
+1:1msg 5.20052 Client 7 Recevied 1:1 message from 3
+1:1msg 5.70006 Client 6 send to Client9
+1:1msg 5.70022 Client 9 Recevied 1:1 message from 6
+1:1msg 5.90006 Client 10 send to Client3
+1:1msg 5.90069 Client 3 Recevied 1:1 message from 10
+1:1msg 6.00006 Client 7 send to Client6
+1:1msg 6.00031 Client 6 Recevied 1:1 message from 7
+1:1msg 6.20006 Client 3 send to Client2
+1:1msg 6.20067 Client 2 Recevied 1:1 message from 3
+1:1msg 6.40006 Client 4 send to Client5
+1:1msg 6.40022 Client 5 Recevied 1:1 message from 4
+1:1msg 6.90006 Client 10 send to Client7
+1:1msg 6.90022 Client 7 Recevied 1:1 message from 10
+1:1msg 7.30006 Client 11 send to Client6
+1:1msg 7.3003 Client 6 Recevied 1:1 message from 11
+1:1msg 7.40006 Client 4 send to Client6
+1:1msg 7.40033 Client 6 Recevied 1:1 message from 4
+1:1msg 7.50006 Client 8 send to Client5
+1:1msg 7.50044 Client 5 Recevied 1:1 message from 8
+1:1msg 7.80006 Client 9 send to Client7
+1:1msg 7.80032 Client 7 Recevied 1:1 message from 9
+1:1msg 8.00335 Client 7 send to Client2
+1:1msg 8.00359 Client 2 Recevied 1:1 message from 7
+1:1msg 8.40006 Client 4 send to Client9
+1:1msg 8.40022 Client 9 Recevied 1:1 message from 4
+1:1msg 8.50006 Client 8 send to Client7
+1:1msg 8.50029 Client 7 Recevied 1:1 message from 8
+1:1msg 9.60006 Client 5 send to Client9
+1:1msg 9.60026 Client 9 Recevied 1:1 message from 5
+1:1msg 9.90006 Client 10 send to Client5
+1:1msg 9.90023 Client 5 Recevied 1:1 message from 10
+1:1msg 10.0001 Client 1 send to Client11
+1:1msg 10.0003 Client 11 Recevied 1:1 message from 1
+1:1msg 10.8001 Client 9 send to Client10
+1:1msg 10.8002 Client 10 Recevied 1:1 message from 9
+1:1msg 11.0001 Client 1 send to Client6
+1:1msg 11.0004 Client 6 Recevied 1:1 message from 1
+1:1msg 11.5001 Client 8 send to Client5
+1:1msg 11.5002 Client 5 Recevied 1:1 message from 8
+1:1msg 11.6001 Client 5 send to Client6
+1:1msg 11.6003 Client 6 Recevied 1:1 message from 5
+1:1msg 11.7001 Client 6 send to Client4
+1:1msg 11.7005 Client 4 Recevied 1:1 message from 6
+1:1msg 11.8001 Client 9 send to Client6
+1:1msg 11.8005 Client 6 Recevied 1:1 message from 9
+1:1msg 11.9001 Client 10 send to Client3
+1:1msg 11.9003 Client 3 Recevied 1:1 message from 10
+1:1msg 12.0004 Client 7 send to Client10
+1:1msg 12.0007 Client 10 Recevied 1:1 message from 7
+1:1msg 12.001 Client 1 send to Client8
+1:1msg 12.0012 Client 8 Recevied 1:1 message from 1
+1:1msg 12.3001 Client 11 send to Client4
+1:1msg 12.3003 Client 4 Recevied 1:1 message from 11
+1:1msg 12.4001 Client 4 send to Client10
+1:1msg 12.4003 Client 10 Recevied 1:1 message from 4
+1:1msg 13.1001 Client 2 send to Client5
+1:1msg 13.1003 Client 5 Recevied 1:1 message from 2
+1:1msg 13.6001 Client 5 send to Client11
+1:1msg 13.6004 Client 11 Recevied 1:1 message from 5
+1:1msg 13.8001 Client 9 send to Client5
+1:1msg 13.8002 Client 5 Recevied 1:1 message from 9
+1:1msg 13.9001 Client 10 send to Client6
+1:1msg 13.9005 Client 6 Recevied 1:1 message from 10
+1:1msg 14.4001 Client 4 send to Client8
+1:1msg 14.4003 Client 8 Recevied 1:1 message from 4
+1:1msg 14.5001 Client 8 send to Client3
+1:1msg 14.5004 Client 3 Recevied 1:1 message from 8
+1:1msg 15.0001 Client 7 send to Client10
+1:1msg 15.0002 Client 10 Recevied 1:1 message from 7
+1:1msg 15.6001 Client 5 send to Client8
+1:1msg 15.6002 Client 8 Recevied 1:1 message from 5
+1:1msg 15.7001 Client 6 send to Client5
+1:1msg 15.7003 Client 5 Recevied 1:1 message from 6
+1:1msg 15.9001 Client 10 send to Client1
+1:1msg 15.9004 Client 1 Recevied 1:1 message from 10
+1:1msg 17.0008 Client 7 send to Client10
+1:1msg 17.001 Client 10 Recevied 1:1 message from 7
+1:1msg 17.0014 Client 1 send to Client10
+1:1msg 17.0016 Client 10 Recevied 1:1 message from 1
+1:1msg 17.4001 Client 4 send to Client2
+1:1msg 17.4003 Client 2 Recevied 1:1 message from 4
+1:1msg 17.6001 Client 5 send to Client7
+1:1msg 17.6005 Client 7 Recevied 1:1 message from 5
+1:1msg 17.8001 Client 9 send to Client5
+1:1msg 17.8003 Client 5 Recevied 1:1 message from 9
+1:1msg 18.1001 Client 2 send to Client10
+1:1msg 18.1003 Client 10 Recevied 1:1 message from 2
+1:1msg 18.4001 Client 4 send to Client1
+1:1msg 18.4002 Client 1 Recevied 1:1 message from 4
+1:1msg 18.8001 Client 9 send to Client3
+1:1msg 18.8003 Client 3 Recevied 1:1 message from 9
+1:1msg 18.9001 Client 10 send to Client9
+1:1msg 18.9005 Client 9 Recevied 1:1 message from 10
+1:1msg 19.0001 Client 7 send to Client1
+1:1msg 19.0003 Client 1 Recevied 1:1 message from 7
+1:1msg 19.1001 Client 2 send to Client8
+1:1msg 19.1005 Client 8 Recevied 1:1 message from 2
+1:1msg 19.5001 Client 8 send to Client6
+1:1msg 19.5003 Client 6 Recevied 1:1 message from 8
+1:1msg 19.6001 Client 5 send to Client11
+1:1msg 19.6003 Client 11 Recevied 1:1 message from 5
+1:1msg 19.9001 Client 10 send to Client4
+1:1msg 19.9003 Client 4 Recevied 1:1 message from 10

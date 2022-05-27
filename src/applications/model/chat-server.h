@@ -30,6 +30,7 @@ class ChatServer : public Application
     public:
         static TypeId GetTypeId (void);
         ChatServer ();
+        uint64_t GetTotalRx () const;
 
     private:
         virtual void StartApplication (void);
@@ -51,5 +52,7 @@ class ChatServer : public Application
         std::map<uint32_t, Ptr<Socket>> ClientSocketmap;
         TracedCallback<Ptr<const Packet> > m_txTrace;
         TracedCallback<Ptr<const Packet> > m_rxTrace;
+        
+        uint64_t        m_totalRx;      //!< Total bytes received
 };
 #endif

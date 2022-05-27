@@ -1,0 +1,73 @@
+room0 8.00241 members: 5 2 9 10 8 6 7 4 1
+room0 8.00241 Client1 make new chatting room
+room0 8.00481 Client 1 invited
+room0 8.00481 Client 5 invited
+room0 8.00481 Client 10 invited
+room0 8.00481 Client 8 invited
+room0 8.00481 Client 6 invited
+room0 8.00481 Client 7 invited
+room0 8.00481 Client 4 invited
+room0 8.0049 Client 9 invited
+room0 8.80241 Client9 send message
+room0 8.80481 Client 9 Received message from 9
+room0 8.80481 Client 2 Received message from 9
+room0 8.80481 Client 10 Received message from 9
+room0 8.80481 Client 8 Received message from 9
+room0 8.80481 Client 6 Received message from 9
+room0 8.80481 Client 7 Received message from 9
+room0 8.80481 Client 4 Received message from 9
+room0 8.80481 Client 1 Received message from 9
+room0 8.8049 Client 5 Received message from 9
+room0 8.90241 Client10 send message
+room0 8.90481 Client 10 Received message from 10
+room0 8.90481 Client 5 Received message from 10
+room0 8.90481 Client 2 Received message from 10
+room0 8.90481 Client 9 Received message from 10
+room0 8.90481 Client 8 Received message from 10
+room0 8.90481 Client 6 Received message from 10
+room0 8.90481 Client 7 Received message from 10
+room0 8.90481 Client 4 Received message from 10
+room0 8.90481 Client 1 Received message from 10
+room0 9.40241 Client4 send message
+room0 9.40481 Client 4 Received message from 4
+room0 9.40481 Client 5 Received message from 4
+room0 9.40481 Client 2 Received message from 4
+room0 9.40481 Client 9 Received message from 4
+room0 9.40481 Client 10 Received message from 4
+room0 9.40481 Client 8 Received message from 4
+room0 9.40481 Client 6 Received message from 4
+room0 9.40481 Client 7 Received message from 4
+room0 9.40481 Client 1 Received message from 4
+room0 9.70241 Client6 send message
+room0 9.70481 Client 6 Received message from 6
+room0 9.70481 Client 5 Received message from 6
+room0 9.70481 Client 2 Received message from 6
+room0 9.70481 Client 9 Received message from 6
+room0 9.70481 Client 10 Received message from 6
+room0 9.70481 Client 7 Received message from 6
+room0 9.70481 Client 4 Received message from 6
+room0 9.70481 Client 1 Received message from 6
+room0 9.7049 Client 8 Received message from 6
+room0 12.9024 Client10 send message
+room0 12.9048 Client 10 Received message from 10
+room0 12.9048 Client 5 Received message from 10
+room0 12.9048 Client 2 Received message from 10
+room0 12.9048 Client 9 Received message from 10
+room0 12.9048 Client 8 Received message from 10
+room0 12.9048 Client 6 Received message from 10
+room0 12.9048 Client 7 Received message from 10
+room0 12.9048 Client 4 Received message from 10
+room0 12.9048 Client 1 Received message from 10
+room0 16.0024 Client1 send message
+room0 16.0048 Client 4 Received message from 1
+room0 16.0052 Client 7 Received message from 1
+room0 16.8024 Client9 send message
+room0 16.8048 Client 9 Received message from 9
+room0 16.8048 Client 5 Received message from 9
+room0 16.8048 Client 2 Received message from 9
+room0 16.8048 Client 10 Received message from 9
+room0 16.8048 Client 8 Received message from 9
+room0 16.8048 Client 6 Received message from 9
+room0 16.8048 Client 7 Received message from 9
+room0 16.8048 Client 4 Received message from 9
+room0 16.8048 Client 1 Received message from 9

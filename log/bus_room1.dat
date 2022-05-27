@@ -1,0 +1,21 @@
+room1 12.2024 members: 4 5 7 3
+room1 12.2024 Client3 make new chatting room
+room1 12.2049 Client 3 invited
+room1 12.2049 Client 4 invited
+room1 12.2049 Client 5 invited
+room1 12.205 Client 7 invited
+room1 13.0024 Client7 send message
+room1 13.0049 Client 7 Received message from 7
+room1 13.0049 Client 4 Received message from 7
+room1 13.0049 Client 5 Received message from 7
+room1 13.005 Client 3 Received message from 7
+room1 13.2024 Client3 send message
+room1 13.2049 Client 3 Received message from 3
+room1 13.2049 Client 4 Received message from 3
+room1 13.2049 Client 5 Received message from 3
+room1 13.205 Client 7 Received message from 3
+room1 19.4024 Client4 send message
+room1 19.4049 Client 4 Received message from 4
+room1 19.4049 Client 5 Received message from 4
+room1 19.4049 Client 7 Received message from 4
+room1 19.405 Client 3 Received message from 4

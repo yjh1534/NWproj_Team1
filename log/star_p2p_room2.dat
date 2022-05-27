@@ -1,0 +1,31 @@
+room2 16.0024 members: 2 1 9 5 11 8 6 10 7
+room2 16.0024 Client7 make new chatting room
+room2 16.0048 Client 7 invited
+room2 16.0048 Client 11 invited
+room2 16.0051 Client 1 invited
+room2 16.0051 Client 2 invited
+room2 16.0051 Client 5 invited
+room2 16.0051 Client 8 invited
+room2 16.0051 Client 6 invited
+room2 16.0051 Client 10 invited
+room2 16.0052 Client 9 invited
+room2 16.3024 Client11 send message
+room2 16.3048 Client 11 Received message from 11
+room2 16.3048 Client 2 Received message from 11
+room2 16.3048 Client 1 Received message from 11
+room2 16.3048 Client 9 Received message from 11
+room2 16.3048 Client 5 Received message from 11
+room2 16.3048 Client 8 Received message from 11
+room2 16.3048 Client 6 Received message from 11
+room2 16.3048 Client 10 Received message from 11
+room2 16.3048 Client 7 Received message from 11
+room2 19.3024 Client11 send message
+room2 19.3048 Client 11 Received message from 11
+room2 19.3048 Client 2 Received message from 11
+room2 19.3048 Client 1 Received message from 11
+room2 19.3048 Client 9 Received message from 11
+room2 19.3048 Client 5 Received message from 11
+room2 19.3048 Client 8 Received message from 11
+room2 19.3048 Client 6 Received message from 11
+room2 19.3048 Client 10 Received message from 11
+room2 19.3048 Client 7 Received message from 11

@@ -17,16 +17,31 @@
 //    |       |       |       |       |
 //    =================================
 //          server
+NS_LOG_COMPONENT_DEFINE("bus");
 
 using namespace ns3;
 using namespace std;
 
+Ptr<ChatServer> ser1;
+uint64_t lastTotalRx1 = 0;
+
+static void 
+CalculateThroughput()
+{
+    double cur1 = (ser1->GetTotalRx() - lastTotalRx1) * (double) 8 / 1e6;
+    NS_LOG_INFO("1\t" << Simulator::Now().GetSeconds() << "\t" << cur1);
+    lastTotalRx1 = ser1->GetTotalRx();
+    Simulator::Schedule(Seconds(1), &CalculateThroughput);
+}
+
 int
 main (int argc, char *argv [])
 {
+    LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
+    LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
     RngSeedManager::SetSeed(15);
 
-    uint32_t client_n = 4;
+    uint32_t client_n = 11;
 
     CommandLine cmd;
     cmd.Parse (argc, argv);
@@ -82,22 +97,25 @@ main (int argc, char *argv [])
         ChatClientHelper chatClient (serverInterfaces.GetAddress(client_n), port + i);
         clientApps[i].Add(chatClient.Install (clientNodes.Get (i))); 
         clientApps[i].Start (Seconds (2.0 + ((double_t) i / 10)));
-        clientApps[i].Stop (Seconds (10.0));
+        clientApps[i].Stop (Seconds (20.0));
     }
 
     /* Set server */
     ChatServerHelper chatServer (port, client_n);
 
     ApplicationContainer serverApp = chatServer.Install (serverNodes.Get (client_n));
+    ser1 = StaticCast<ChatServer> (serverApp.Get(0));
     serverApp.Start (Seconds (1.0));
-    serverApp.Stop (Seconds (10.0));
+    serverApp.Stop (Seconds (21.0));
 
     /* Set etc */
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
+    Simulator::Schedule(Seconds(0.0), &CalculateThroughput);
 
     p2p.EnablePcapAll ("bus_p2p");
     csma.EnablePcap ("bus_p2p", serverDevices.Get (client_n), true);
 
+    Simulator::Stop(Seconds(21.0));
     Simulator::Run ();
     Simulator::Destroy ();
     return 0;

@@ -1,0 +1,21 @@
+room3 16.2001 members: 7 9 1 2 11 4 6 8 3
+room3 16.2001 Client3 make new chatting room
+room3 16.2003 Client 3 invited
+room3 16.2006 Client 7 invited
+room3 16.2007 Client 9 invited
+room3 16.2009 Client 1 invited
+room3 16.2012 Client 2 invited
+room3 16.2015 Client 11 invited
+room3 16.2017 Client 4 invited
+room3 16.2019 Client 6 invited
+room3 16.2021 Client 8 invited
+room3 19.3001 Client11 send message
+room3 19.3003 Client 11 Received message from 11
+room3 19.3006 Client 2 Received message from 11
+room3 19.3009 Client 7 Received message from 11
+room3 19.3011 Client 9 Received message from 11
+room3 19.3014 Client 1 Received message from 11
+room3 19.3016 Client 4 Received message from 11
+room3 19.3018 Client 6 Received message from 11
+room3 19.3021 Client 8 Received message from 11
+room3 19.3024 Client 3 Received message from 11

@@ -1,0 +1,21 @@
+room1 12.2001 members: 4 5 7 3
+room1 12.2001 Client3 make new chatting room
+room1 12.2003 Client 3 invited
+room1 12.2004 Client 4 invited
+room1 12.2007 Client 5 invited
+room1 12.201 Client 7 invited
+room1 13.0001 Client7 send message
+room1 13.0003 Client 7 Received message from 7
+room1 13.0005 Client 4 Received message from 7
+room1 13.0008 Client 5 Received message from 7
+room1 13.001 Client 3 Received message from 7
+room1 13.2001 Client3 send message
+room1 13.2003 Client 3 Received message from 3
+room1 13.2007 Client 4 Received message from 3
+room1 13.2009 Client 5 Received message from 3
+room1 13.2012 Client 7 Received message from 3
+room1 19.4001 Client4 send message
+room1 19.4003 Client 4 Received message from 4
+room1 19.4005 Client 5 Received message from 4
+room1 19.4007 Client 7 Received message from 4
+room1 19.401 Client 3 Received message from 4

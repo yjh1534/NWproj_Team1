@@ -1,0 +1,289 @@
+1	0	0
+1	1	0
+1	2	0
+1	3	0
+1	4	0.0096
+1:1msg	4.10102	Client 2 send to Client7
+1:1msg	4.10204	Client 7 Recevied 1:1 message from 2
+1	5	0.008
+1:1msg	5.00102	Client 1 send to Client10
+1:1msg	5.00204	Client 10 Recevied 1:1 message from 1
+1:1msg	5.20102	Client 3 send to Client7
+1:1msg	5.20204	Client 7 Recevied 1:1 message from 3
+1:1msg	5.70102	Client 6 send to Client9
+1:1msg	5.70204	Client 9 Recevied 1:1 message from 6
+1:1msg	5.90102	Client 10 send to Client3
+1:1msg	5.90204	Client 3 Recevied 1:1 message from 10
+1	6	0.0064
+1:1msg	6.00102	Client 7 send to Client6
+1:1msg	6.00204	Client 6 Recevied 1:1 message from 7
+1:1msg	6.20102	Client 3 send to Client2
+1:1msg	6.20204	Client 2 Recevied 1:1 message from 3
+1:1msg	6.40102	Client 4 send to Client5
+1:1msg	6.40204	Client 5 Recevied 1:1 message from 4
+1:1msg	6.90102	Client 10 send to Client7
+1:1msg	6.90204	Client 7 Recevied 1:1 message from 10
+1	7	0.008
+1:1msg	7.30102	Client 11 send to Client6
+1:1msg	7.30204	Client 6 Recevied 1:1 message from 11
+1:1msg	7.40102	Client 4 send to Client6
+1:1msg	7.40204	Client 6 Recevied 1:1 message from 4
+1:1msg	7.50102	Client 8 send to Client5
+1:1msg	7.50204	Client 5 Recevied 1:1 message from 8
+1:1msg	7.80102	Client 9 send to Client7
+1:1msg	7.80204	Client 7 Recevied 1:1 message from 9
+1	8	0.0064
+1:1msg	8.00102	Client 7 send to Client2
+room0	8.00102	members: 5 2 9 10 8 6 7 4 1
+room0	8.00102	Client1 make new chatting room
+room0	8.00204	Client 5 invited
+room0	8.00204	Client 10 invited
+room0	8.00204	Client 8 invited
+room0	8.00204	Client 6 invited
+room0	8.00204	Client 7 invited
+room0	8.00204	Client 4 invited
+room0	8.00204	Client 1 invited
+1:1msg	8.00206	Client 2 Recevied 1:1 message from 7
+room0	8.00318	Client 9 invited
+1:1msg	8.50102	Client 8 send to Client9
+1:1msg	8.50204	Client 9 Recevied 1:1 message from 8
+1:1msg	8.60102	Client 5 send to Client8
+1:1msg	8.60204	Client 8 Recevied 1:1 message from 5
+room0	8.80102	Client9 send message
+room0	8.80204	Client 2 Received message from 9
+room0	8.80204	Client 10 Received message from 9
+room0	8.80204	Client 8 Received message from 9
+room0	8.80204	Client 6 Received message from 9
+room0	8.80204	Client 7 Received message from 9
+room0	8.80204	Client 4 Received message from 9
+room0	8.80204	Client 1 Received message from 9
+room0	8.80204	Client 9 Received message from 9
+room0	8.80317	Client 5 Received message from 9
+room0	8.90102	Client10 send message
+room0	8.90204	Client 5 Received message from 10
+room0	8.90204	Client 2 Received message from 10
+room0	8.90204	Client 9 Received message from 10
+room0	8.90204	Client 8 Received message from 10
+room0	8.90204	Client 6 Received message from 10
+room0	8.90204	Client 7 Received message from 10
+room0	8.90204	Client 4 Received message from 10
+room0	8.90204	Client 1 Received message from 10
+room0	8.90204	Client 10 Received message from 10
+1	9	0.0096
+room0	9.40102	Client4 send message
+room0	9.40204	Client 5 Received message from 4
+room0	9.40204	Client 2 Received message from 4
+room0	9.40204	Client 9 Received message from 4
+room0	9.40204	Client 10 Received message from 4
+room0	9.40204	Client 8 Received message from 4
+room0	9.40204	Client 6 Received message from 4
+room0	9.40204	Client 7 Received message from 4
+room0	9.40204	Client 1 Received message from 4
+room0	9.40204	Client 4 Received message from 4
+1:1msg	9.50102	Client 8 send to Client9
+1:1msg	9.50204	Client 9 Recevied 1:1 message from 8
+1:1msg	9.60102	Client 5 send to Client9
+1:1msg	9.60204	Client 9 Recevied 1:1 message from 5
+room0	9.70102	Client6 send message
+room0	9.70204	Client 5 Received message from 6
+room0	9.70204	Client 2 Received message from 6
+room0	9.70204	Client 9 Received message from 6
+room0	9.70204	Client 10 Received message from 6
+room0	9.70204	Client 7 Received message from 6
+room0	9.70204	Client 4 Received message from 6
+room0	9.70204	Client 1 Received message from 6
+room0	9.70204	Client 6 Received message from 6
+room0	9.70331	Client 8 Received message from 6
+1:1msg	9.90102	Client 10 send to Client5
+1:1msg	9.90204	Client 5 Recevied 1:1 message from 10
+1	10	0.008
+1:1msg	10.001	Client 1 send to Client11
+1:1msg	10.002	Client 11 Recevied 1:1 message from 1
+1:1msg	10.801	Client 9 send to Client10
+1:1msg	10.802	Client 10 Recevied 1:1 message from 9
+1	11	0.0032
+1:1msg	11.001	Client 1 send to Client6
+1:1msg	11.002	Client 6 Recevied 1:1 message from 1
+1:1msg	11.201	Client 3 send to Client2
+1:1msg	11.202	Client 2 Recevied 1:1 message from 3
+1:1msg	11.401	Client 4 send to Client6
+1:1msg	11.402	Client 6 Recevied 1:1 message from 4
+1:1msg	11.501	Client 8 send to Client5
+1:1msg	11.502	Client 5 Recevied 1:1 message from 8
+1:1msg	11.601	Client 5 send to Client4
+1:1msg	11.6033	Client 4 Recevied 1:1 message from 5
+1:1msg	11.701	Client 6 send to Client7
+1:1msg	11.702	Client 7 Recevied 1:1 message from 6
+1:1msg	11.801	Client 9 send to Client3
+1:1msg	11.802	Client 3 Recevied 1:1 message from 9
+1:1msg	11.901	Client 10 send to Client9
+1:1msg	11.902	Client 9 Recevied 1:1 message from 10
+1	12	0.0128
+1:1msg	12.001	Client 7 send to Client5
+1:1msg	12.002	Client 5 Recevied 1:1 message from 7
+room1	12.101	members: 4 5 7 2
+room1	12.101	Client2 make new chatting room
+room1	12.102	Client 4 invited
+room1	12.102	Client 5 invited
+room1	12.102	Client 7 invited
+room1	12.102	Client 2 invited
+1:1msg	12.201	Client 3 send to Client5
+1:1msg	12.202	Client 5 Recevied 1:1 message from 3
+1:1msg	12.301	Client 11 send to Client9
+1:1msg	12.302	Client 9 Recevied 1:1 message from 11
+room0	12.901	Client10 send message
+room0	12.902	Client 5 Received message from 10
+room0	12.902	Client 2 Received message from 10
+room0	12.902	Client 9 Received message from 10
+room0	12.902	Client 8 Received message from 10
+room0	12.902	Client 6 Received message from 10
+room0	12.902	Client 7 Received message from 10
+room0	12.902	Client 4 Received message from 10
+room0	12.902	Client 1 Received message from 10
+room0	12.902	Client 10 Received message from 10
+1	13	0.008
+1:1msg	13.001	Client 1 send to Client10
+1:1msg	13.002	Client 10 Recevied 1:1 message from 1
+room1	13.101	Client2 send message
+room1	13.102	Client 4 Received message from 2
+room1	13.102	Client 5 Received message from 2
+room1	13.102	Client 7 Received message from 2
+room1	13.102	Client 2 Received message from 2
+1:1msg	13.501	Client 8 send to Client11
+1:1msg	13.502	Client 11 Recevied 1:1 message from 8
+room1	13.601	Client5 send message
+room1	13.602	Client 4 Received message from 5
+room1	13.602	Client 7 Received message from 5
+room1	13.602	Client 2 Received message from 5
+room1	13.602	Client 5 Received message from 5
+1:1msg	13.701	Client 6 send to Client5
+1:1msg	13.702	Client 5 Recevied 1:1 message from 6
+1:1msg	13.801	Client 9 send to Client6
+1:1msg	13.802	Client 6 Recevied 1:1 message from 9
+1	14	0.0096
+1:1msg	14.301	Client 11 send to Client7
+1:1msg	14.302	Client 7 Recevied 1:1 message from 11
+1:1msg	14.401	Client 4 send to Client3
+1:1msg	14.402	Client 3 Recevied 1:1 message from 4
+1:1msg	14.901	Client 10 send to Client9
+1:1msg	14.902	Client 9 Recevied 1:1 message from 10
+1	15	0.0048
+1:1msg	15.501	Client 8 send to Client7
+1:1msg	15.502	Client 7 Recevied 1:1 message from 8
+1:1msg	15.601	Client 5 send to Client6
+1:1msg	15.602	Client 6 Recevied 1:1 message from 5
+1:1msg	15.801	Client 9 send to Client1
+1:1msg	15.802	Client 1 Recevied 1:1 message from 9
+1	16	0.0048
+room2	16.001	members: 2 1 9 5 11 8 6 10 7
+room2	16.001	Client7 make new chatting room
+room0	16.001	Client1 send message
+room2	16.002	Client 11 invited
+room0	16.002	Client 4 Received message from 1
+room2	16.002	Client 7 invited
+room2	16.0021	Client 2 invited
+room2	16.0021	Client 5 invited
+room2	16.0021	Client 8 invited
+room2	16.0021	Client 6 invited
+room2	16.0021	Client 10 invited
+room2	16.0021	Client 1 invited
+room2	16.0035	Client 9 invited
+room0	16.0036	Client 7 Received message from 1
+room3	16.101	members: 7 9 1 3 11 4 6 8 2
+room3	16.101	Client2 make new chatting room
+room3	16.102	Client 7 invited
+room3	16.102	Client 9 invited
+room3	16.102	Client 1 invited
+room3	16.102	Client 3 invited
+room3	16.102	Client 11 invited
+room3	16.102	Client 4 invited
+room3	16.102	Client 6 invited
+room3	16.102	Client 8 invited
+room3	16.102	Client 2 invited
+room2	16.301	Client11 send message
+room2	16.302	Client 2 Received message from 11
+room2	16.302	Client 1 Received message from 11
+room2	16.302	Client 9 Received message from 11
+room2	16.302	Client 5 Received message from 11
+room2	16.302	Client 8 Received message from 11
+room2	16.302	Client 6 Received message from 11
+room2	16.302	Client 10 Received message from 11
+room2	16.302	Client 7 Received message from 11
+room2	16.302	Client 11 Received message from 11
+room0	16.801	Client9 send message
+room0	16.802	Client 5 Received message from 9
+room0	16.802	Client 2 Received message from 9
+room0	16.802	Client 10 Received message from 9
+room0	16.802	Client 8 Received message from 9
+room0	16.802	Client 6 Received message from 9
+room0	16.802	Client 7 Received message from 9
+room0	16.802	Client 4 Received message from 9
+room0	16.802	Client 1 Received message from 9
+room0	16.802	Client 9 Received message from 9
+1:1msg	16.901	Client 10 send to Client9
+1:1msg	16.902	Client 9 Recevied 1:1 message from 10
+1	17	0.0096
+1:1msg	17.001	Client 7 send to Client4
+1:1msg	17.002	Client 4 Recevied 1:1 message from 7
+1:1msg	17.301	Client 11 send to Client2
+1:1msg	17.302	Client 2 Recevied 1:1 message from 11
+1:1msg	17.501	Client 8 send to Client6
+1:1msg	17.502	Client 6 Recevied 1:1 message from 8
+1:1msg	17.701	Client 6 send to Client5
+1:1msg	17.702	Client 5 Recevied 1:1 message from 6
+1	18	0.0064
+1:1msg	18.001	Client 1 send to Client3
+1:1msg	18.002	Client 3 Recevied 1:1 message from 1
+1:1msg	18.301	Client 11 send to Client1
+1:1msg	18.302	Client 1 Recevied 1:1 message from 11
+room4	18.601	members: 10 9 11 8 3 5
+room4	18.601	Client5 make new chatting room
+room4	18.602	Client 10 invited
+room4	18.602	Client 9 invited
+room4	18.602	Client 11 invited
+room4	18.602	Client 8 invited
+room4	18.602	Client 3 invited
+room4	18.602	Client 5 invited
+1:1msg	18.701	Client 6 send to Client3
+1:1msg	18.702	Client 3 Recevied 1:1 message from 6
+1:1msg	18.801	Client 9 send to Client10
+1:1msg	18.802	Client 10 Recevied 1:1 message from 9
+1:1msg	18.901	Client 10 send to Client1
+1:1msg	18.902	Client 1 Recevied 1:1 message from 10
+1	19	0.0096
+1:1msg	19.001	Client 1 send to Client7
+1:1msg	19.002	Client 7 Recevied 1:1 message from 1
+room3	19.201	Client3 send message
+room3	19.202	Client 7 Received message from 3
+room3	19.202	Client 9 Received message from 3
+room3	19.202	Client 11 Received message from 3
+room3	19.202	Client 4 Received message from 3
+room3	19.202	Client 6 Received message from 3
+room3	19.202	Client 8 Received message from 3
+room3	19.202	Client 2 Received message from 3
+room3	19.202	Client 3 Received message from 3
+room3	19.2032	Client 1 Received message from 3
+room2	19.301	Client11 send message
+room2	19.302	Client 2 Received message from 11
+room2	19.302	Client 1 Received message from 11
+room2	19.302	Client 9 Received message from 11
+room2	19.302	Client 5 Received message from 11
+room2	19.302	Client 8 Received message from 11
+room2	19.302	Client 6 Received message from 11
+room2	19.302	Client 10 Received message from 11
+room2	19.302	Client 7 Received message from 11
+room2	19.302	Client 11 Received message from 11
+1:1msg	19.401	Client 4 send to Client7
+1:1msg	19.402	Client 7 Recevied 1:1 message from 4
+1:1msg	19.501	Client 8 send to Client11
+1:1msg	19.502	Client 11 Recevied 1:1 message from 8
+room1	19.601	Client5 send message
+room1	19.602	Client 7 Received message from 5
+room1	19.602	Client 2 Received message from 5
+room1	19.602	Client 5 Received message from 5
+room1	19.6037	Client 4 Received message from 5
+1:1msg	19.801	Client 9 send to Client4
+1:1msg	19.802	Client 4 Recevied 1:1 message from 9
+1:1msg	19.901	Client 10 send to Client7
+1:1msg	19.902	Client 7 Recevied 1:1 message from 10
+1	20	0.0128

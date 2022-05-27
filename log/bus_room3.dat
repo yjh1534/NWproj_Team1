@@ -1,0 +1,21 @@
+room3 16.2024 members: 7 9 1 2 11 4 6 8 3
+room3 16.2024 Client3 make new chatting room
+room3 16.2049 Client 3 invited
+room3 16.2049 Client 7 invited
+room3 16.2049 Client 9 invited
+room3 16.205 Client 1 invited
+room3 16.205 Client 2 invited
+room3 16.205 Client 11 invited
+room3 16.2051 Client 4 invited
+room3 16.2051 Client 6 invited
+room3 16.2051 Client 8 invited
+room3 19.3024 Client11 send message
+room3 19.3049 Client 11 Received message from 11
+room3 19.3049 Client 7 Received message from 11
+room3 19.305 Client 9 Received message from 11
+room3 19.305 Client 1 Received message from 11
+room3 19.305 Client 2 Received message from 11
+room3 19.3051 Client 4 Received message from 11
+room3 19.3051 Client 6 Received message from 11
+room3 19.3051 Client 8 Received message from 11
+room3 19.3051 Client 3 Received message from 11
