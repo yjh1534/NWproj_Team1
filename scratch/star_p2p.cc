@@ -67,6 +67,7 @@ main (int argc, char *argv [])
     ApplicationContainer clientApps[client_n];
     for (int i = 0; i < (int) client_n; i++){
         ChatClientHelper chatClient (star.GetHubIpv4Address(0), port + i);
+        chatClient.SetAttribute("Interval", TimeValue(Seconds(0.1)));
         clientApps[i].Add(chatClient.Install (star.GetSpokeNode (i))); 
         clientApps[i].Start (Seconds (2.0 + ((double_t) i / 10)));
         clientApps[i].Stop (Seconds (20.0));

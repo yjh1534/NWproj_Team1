@@ -34,7 +34,8 @@ TypeId ChatClient::GetTypeId (void){
         .AddAttribute("Address", "Server Address", AddressValue(),MakeAddressAccessor(&ChatClient::m_address), MakeAddressChecker())
         .AddAttribute("Port", "Serve Port", UintegerValue(0), MakeUintegerAccessor(&ChatClient::m_port), MakeUintegerChecker<uint16_t> ())
         .AddTraceSource("Tx", "Packet send", MakeTraceSourceAccessor(&ChatClient::m_txTrace), "ns3::Packet::TracedCallback")
-         .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatClient::m_rxTrace), "ns3::Packet::TracedCallback")
+        .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatClient::m_rxTrace), "ns3::Packet::TracedCallback")
+        .AddAttribute ("Interval", "The time to wait between packets", TimeValue (Seconds (1.0)), MakeTimeAccessor (&ChatClient::m_interval), MakeTimeChecker ())
 ;
     return tid;
 }
@@ -69,7 +70,7 @@ void ChatClient::StartApplication(void)
 //    r_socket->Close();
 //    r_socket->Listen();
     //r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatClient::onAccept, this));
-    ScheduleTx (Seconds(1.0));
+    ScheduleTx (m_interval);
 }
 void ChatClient::onAccept(Ptr<Socket> s){
     std::cout << "Client Connected Server\n";
@@ -141,7 +142,7 @@ void ChatClient::SendPacket(void){
         }
     }
     // double_t next_time = ((double_t) ((rand() % 10) + 10)) / (double_t) 10;
-    ScheduleTx(Seconds(1.0));
+    ScheduleTx(m_interval);
 }
 
 void ChatClient::HandleRead(Ptr<Socket> socket){

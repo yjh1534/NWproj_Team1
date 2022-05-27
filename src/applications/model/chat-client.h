@@ -52,6 +52,7 @@ class ChatClient : public Application
         Ptr<Socket> m_socket;
         Ptr<Socket> r_socket;
         EventId m_sendEvent;
+        Time m_interval;
 
         TracedCallback<Ptr<const Packet> > m_txTrace;
         TracedCallback<Ptr<const Packet> > m_rxTrace;

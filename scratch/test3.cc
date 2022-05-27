@@ -39,6 +39,7 @@ main (int argc, char *argv[])
     uint16_t port = 9;
     for(uint16_t i = 1; i <= 10; i++){
         ChatClientHelper cc (if1.GetAddress(0),port + i);
+        cc.SetAttribute("Interval", TimeValue(Seconds(1.0)));
         cap_list[i].Add(cc.Install(nodes.Get(i)));
         cap_list[i].Start(Seconds(1 + ((double_t) i / 10)));
         cap_list[i].Stop(Seconds(20));
