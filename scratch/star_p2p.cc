@@ -32,7 +32,7 @@ static void
 CalculateThroughput()
 {
     double cur1 = (ser1->GetTotalRx() - lastTotalRx1) * (double) 8 / 1e6;
-    NS_LOG_INFO("1\t" << Simulator::Now().GetSeconds() << "\t" << cur1);
+    NS_LOG_INFO("tp\t" << Simulator::Now().GetSeconds() << "\t" << cur1);
     lastTotalRx1 = ser1->GetTotalRx();
     Simulator::Schedule(Seconds(1), &CalculateThroughput);
 }
