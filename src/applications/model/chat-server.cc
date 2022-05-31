@@ -63,9 +63,10 @@ void ChatServer::StartApplication(void)
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         t_socket.push_back(Socket::CreateSocket(GetNode(),tid));
         if(t_socket.back()->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port + i)) == -1)
+		NS_LOG_WARN("Bind Error for " << m_port + i);
         t_socket.back()->Close();
         if(t_socket.back()->Listen() == -1)
-            std::cout<<"Listen Failed\n";
+		NS_LOG_WARN("Listen Failed");
         t_socket.back()->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatServer::onAccept, this));
     }    
 }

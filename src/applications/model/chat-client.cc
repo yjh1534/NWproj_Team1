@@ -64,7 +64,7 @@ void ChatClient::StartApplication(void)
         r_socket->Bind();
         r_socket->SetConnectCallback(MakeCallback(&ChatClient::onAccept, this), MakeNullCallback <void, Ptr<Socket>>());
         if(r_socket->Connect(InetSocketAddress(Ipv4Address::ConvertFrom(m_address), m_port)) == -1)
-            std::cout << "failed connected\n";
+            NS_LOG_WARN("Failed Conneced");
     }
     m_running = true;
 //    r_socket->Close();
@@ -151,7 +151,7 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             std::vector<uint32_t> _data = {};
             _data = hdr.GetData();
             if (_data.empty()){
-                std::cout<<"Invalid Header \n";
+		NS_LOG_WARN("Invalid Header");
                 return;
             }
             uint32_t m = _data[0];
