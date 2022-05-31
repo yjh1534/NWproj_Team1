@@ -1,6 +1,8 @@
-# Run Example
+# Run Example to Get Logfiles
 
-change 'wifi_ad' to something you want to test
+* Change 'wifi_ad' to something you want to test.
+* Can get Log of chatting in './log/*room.dat' files.
+* Can get Log of throughput in './log/*_pt.dat' file. The format of data is 'time "\t" throughpt'. 
 
 ```console
 foo@bar:~$ export 'NS_LOG=wifi_ad=level_all'
