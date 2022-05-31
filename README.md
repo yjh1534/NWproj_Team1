@@ -2,7 +2,7 @@
 
 * Change 'wifi_ad' to something you want to test.
 * Can get Log of chatting in './log/*room.dat' files.
-* Can get Log of throughput in './log/*_pt.dat' file. The format of data is 'time "\t" throughpt'. 
+* Can get Log of throughput in './log/*_pt.dat' file. The format of data is 'time "\t" throughput'. 
 
 ```console
 foo@bar:~$ export 'NS_LOG=wifi_ad=level_all'
