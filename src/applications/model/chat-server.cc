@@ -58,13 +58,11 @@ ChatServer::ChatServer()
 
 void ChatServer::StartApplication(void)
 {
-    std::cout<<"Start Server\n";
     NS_LOG_FUNCTION(this);
     for (uint32_t i= 0; i < n_socket; i++){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
         t_socket.push_back(Socket::CreateSocket(GetNode(),tid));
         if(t_socket.back()->Bind(InetSocketAddress(Ipv4Address::GetAny(), m_port + i)) == -1)
-            std::cout << "Bind Error for "<< m_port + i << "\n";
         t_socket.back()->Close();
         if(t_socket.back()->Listen() == -1)
             std::cout<<"Listen Failed\n";
@@ -73,26 +71,21 @@ void ChatServer::StartApplication(void)
 }
 
 void ChatServer::onAccept(Ptr<Socket> s, const Address& from){
-    std::cout << "Accpeted\n";
     s->SetRecvCallback(MakeCallback(&ChatServer::HandleRead, this));
 }
 
 void ChatServer::SendPacket(std::vector<uint32_t> d_to_send){
     ChatHeader shdr;
-    // if (!d_to_send.size()) std::cout << " data is empty!!!!!!!!\n"; 
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
     packet->AddHeader(shdr);
 
     for (uint32_t i= 1 ; i <= ClientNumber; ++i){
         ClientSocketmap[i]->Send(packet->Copy());
-        // std::cout<<" Server Send New Client "<< ClientNumber <<" to Client "<< i << " with address " << ClientSocketmap[i] <<", Packet Size "<< packet->GetSize() << "\n";
     }
-    // std::cout<<" Server Send New Client "<< ClientNumber <<" to all "<< packet->GetSize() <<" \n";
 }
 void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d_to_send){
     ChatHeader shdr;
-    // if (!d_to_send.size()) std::cout << " data is empty!!!!!!!!\n"; 
     shdr.SetData(d_to_send);
     Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size()*4 - 4);
     packet->AddHeader(shdr);
@@ -100,11 +93,9 @@ void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d
         for(uint32_t i=0; i < chatroom[dest].size(); i++){
             ClientSocketmap[chatroom[dest][i]]->Send(packet->Copy());
         }
-        std::cout << " Server Sends Message to Room " << dest << " from " << d_to_send.back() << "\n";
    }
     else{
         ClientSocketmap[dest]->Send(packet);
-        std::cout << " Server Sends Message to "<< dest << " from " << d_to_send.back() << "\n";
    }
 }   
 
@@ -136,22 +127,18 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 ClientNumber++;
                 ClientSocketmap[ClientNumber] = socket;
                 d.push_back(ClientNumber);
-                std::cout<<" Server Received New Client : "<<ClientNumber<<"\n";
                 SendPacket(d);
             }
             else if(mod==1){
                 //data[1] : Destination
                 d.push_back(_data[2]);
-                 std::cout<<" Server: 1:1 Message from Client "<< _data[2] << " to Client "<< _data[1]<<"\n";
                  NS_LOG_INFO("1:1msg\t"  << Simulator::Now().GetSeconds() << "\t" << "Client "<< _data[2] << " send to Client" << _data[1]);
                 SendPacket(false, _data[1], d);
             }
             else if(mod==2){
                 d.push_back(_data[2]);
                 d.push_back(_data[1]);
-                 std::cout<<" Server: Group Message from Client"<< _data[2] << " to Room "<< _data[1]<<"\n";
-                 //NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds()<< "\t" << "members: " << get_members(chatroom[_data[1]]));
-                 NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds()<< "\t" << "Client" << _data[2] << " send message");
+                NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds()<< "\t" << "Client" << _data[2] << " send message");
                 SendPacket(true, _data[1], d);
             }
             //making new chatroom in Server
@@ -162,16 +149,15 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 }
                 d.push_back(chatroom.size());
                 chatroom.push_back(new_members);
-                 std::cout<<" Server: Group Creation from Client "<< _data.back() << " as Room "<< d.back()<<"\n";
-                 NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "members: " << get_members(chatroom[d.back()]));
-                 NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client" << _data.back() << " make new chatting room");
+                NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "members: " << get_members(chatroom[d.back()]));
+                NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client" << _data.back() << " make new chatting room");
                 SendPacket(true, d.back(), d);
             }
         }
     }
 }
 
-void ChatServer::StopApplication (void){
+void ChatServer::StopApplication(void){
     NS_LOG_FUNCTION(this);
     m_running = false;
     if(m_sendEvent.IsRunning()){
