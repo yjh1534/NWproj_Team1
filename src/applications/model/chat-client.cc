@@ -45,7 +45,6 @@ ChatClient::ChatClient()
     m_packetSize(200),
     m_running(false),
     m_packetsSent(0), 
-    m_socket(0),
     r_socket(0),
     m_sendEvent(EventId())
 {
@@ -57,9 +56,8 @@ void ChatClient::StartApplication(void)
 {
     NS_LOG_FUNCTION(this);
 
-    if(!m_socket){
+    if(!r_socket){
         TypeId tid = TypeId::LookupByName("ns3::TcpSocketFactory");
-        m_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket = Socket::CreateSocket(GetNode(),tid);
         r_socket->Bind();
         r_socket->SetConnectCallback(MakeCallback(&ChatClient::onAccept, this), MakeNullCallback <void, Ptr<Socket>>());
@@ -67,9 +65,6 @@ void ChatClient::StartApplication(void)
             NS_LOG_WARN("Failed Conneced");
     }
     m_running = true;
-//    r_socket->Close();
-//    r_socket->Listen();
-    //r_socket->SetAcceptCallback (MakeNullCallback<bool, Ptr<Socket>, const Address&> (), MakeCallback(&ChatClient::onAccept, this));
     ScheduleTx (m_interval);
 }
 void ChatClient::onAccept(Ptr<Socket> s){
@@ -82,7 +77,6 @@ void ChatClient::ScheduleTx(Time dt){
 
 void ChatClient::SendPacket(void){
     NS_LOG_FUNCTION(this);
-    //Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() * 8);
     ChatHeader shdr;
     std::vector<uint32_t> d_to_send;
     uint32_t send_prob = rand() % 100;
@@ -214,8 +208,7 @@ void ChatClient::StopApplication (void){
     if(m_sendEvent.IsRunning()){
         Simulator::Cancel(m_sendEvent);
     }
-    if(m_socket){
-        m_socket->Close();
+    if(r_socket){
         r_socket->Close();
     }
 }

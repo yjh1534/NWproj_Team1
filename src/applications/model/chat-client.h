@@ -49,7 +49,6 @@ class ChatClient : public Application
         uint32_t m_packetSize;
         bool m_running;
         uint32_t m_packetsSent;
-        Ptr<Socket> m_socket;
         Ptr<Socket> r_socket;
         EventId m_sendEvent;
         Time m_interval;
