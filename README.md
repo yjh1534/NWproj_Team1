@@ -6,9 +6,9 @@ When using Docker, move to root/NWproj_Team1/ in container
 
 ### Directories
 We implemented Chat client, Chat server, chat header and some Example scenario files.
-* copy chat-client.*, chat-server.* chat-header.* in src/application/model/
-* copy chat-client-helper.*, chat-server-helper.* in src/application/helper/
-* copy chat-header.*
+* copy chat-client.\*, chat-server.* chat-header.* in src/application/model/
+* copy chat-client-helper.\*, chat-server-helper.* in src/application/helper/
+* copy get_log.sh in base directory
 * modify src/application/wscript file
 
 ### CMD 
