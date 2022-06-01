@@ -32,7 +32,7 @@ TypeId ChatServer::GetTypeId (void){
         .AddAttribute("Port", "Client Port", UintegerValue(0), MakeUintegerAccessor(&ChatServer::m_port), MakeUintegerChecker<uint16_t> ())
         .AddAttribute("SocketNumber","max Socket", UintegerValue(0), MakeUintegerAccessor(&ChatServer::n_socket), MakeUintegerChecker<uint32_t>())
         .AddTraceSource("Tx", "Packet send", MakeTraceSourceAccessor(&ChatServer::m_txTrace), "ns3::Packet::TracedCallback")
-         .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatServer::m_rxTrace), "ns3::Packet::TracedCallback")
+        .AddTraceSource("Rx", "Packet send", MakeTraceSourceAccessor(&ChatServer::m_rxTrace), "ns3::Packet::TracedCallback")
 ;
     return tid;
 }
