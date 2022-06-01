@@ -99,8 +99,13 @@ void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d
    }
     else{
         if(!ClientSocketmap[dest]){
-            return;
+            packet->RemoveHeader(shdr);
+            int tmp = dest;
             dest = d_to_send.back();
+            d_to_send[0]=4;
+            d_to_send[1]=tmp;
+            shdr.SetData(d_to_send);
+            packet->AddHeader(shdr);
         }
         ClientSocketmap[dest]->Send(packet);
    }
@@ -172,8 +177,8 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 }
 
 
-                NS_LOG_INFO("Server Ok: Client" << _data[1] << " is exited");
-                SendPacket(d);
+                NS_LOG_INFO("In Server Client" << _data[1] << " is exited");
+                //SendPacket(d);
             }
         }
     }
