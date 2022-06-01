@@ -13,7 +13,7 @@ std::string DataRate="10Mbps";
 CommandLine cmd;
 cmd.AddValue("verbose","Logging or not",verbose);
 cmd.AddValue("client_n","The number of clients",client_n);
-cmd.AddValue("datarate","Setting the datarate of the channel", DataRate);cmd.Parse (argc, argv);
+cmd.AddValue("datarate","Setting the datarate of the channel", DataRate);
 cmd.Parse (argc, argv);
 ```
 
