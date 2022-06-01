@@ -177,7 +177,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 }
 
 
-                NS_LOG_INFO("In Server Client" << _data[1] << " is exited");
+                NS_LOG_INFO(Simulator::Now().GetSeconds()<<"\t"<<"In Server Client" << _data[1] << " is exited");
                 //SendPacket(d);
             }
         }

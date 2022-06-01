@@ -40,18 +40,25 @@ CalculateThroughput()
 int
 main (int argc, char *argv [])
 {
-    LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
-    LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
-    RngSeedManager::SetSeed(15);
 
     uint32_t client_n = 11;
+    bool verbose=false;
+    std::string DataRate="10Mbps";
 
     CommandLine cmd;
+    cmd.AddValue("verbose","Logging or not",verbose);
+    cmd.AddValue("client_n","The number of clients",client_n);
     cmd.Parse (argc, argv);
 
+    if(verbose)
+    {
+      LogComponentEnable("star_p2p",LOG_LEVEL_INFO);
+      LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
+      LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
+    }
     /* Set p2p */
     PointToPointHelper p2p;
-    p2p.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
+    p2p.SetDeviceAttribute ("DataRate", StringValue (DataRate));
     p2p.SetChannelAttribute ("Delay", StringValue ("2ms"));
     PointToPointStarHelper star (client_n, p2p);
  
@@ -84,9 +91,6 @@ main (int argc, char *argv [])
     /* Set etc */
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
     Simulator::Schedule(Seconds(0.0), &CalculateThroughput);
-
-    p2p.EnablePcapAll ("star_p2p");
-
     Simulator::Stop(Seconds(21.0));
     Simulator::Run ();
     Simulator::Destroy ();

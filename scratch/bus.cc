@@ -37,14 +37,19 @@ CalculateThroughput()
 int
 main (int argc, char *argv [])
 {
-    LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
-    LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
-    RngSeedManager::SetSeed(15);
-
     uint32_t client_n = 11;
+    bool verbose=false;
 
     CommandLine cmd;
+    cmd.AddValue("verbose","Logging or not",verbose);
+    cmd.AddValue("client_n","The number of clients",client_n);
     cmd.Parse (argc, argv);
+
+    if(verbose){
+      LogComponentEnable("bus",LOG_LEVEL_INFO);
+      LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
+      LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
+    }
 
     /* Create nodes */
     NodeContainer clientNodes;
@@ -56,7 +61,7 @@ main (int argc, char *argv [])
 
     /* Set p2p */
     PointToPointHelper p2p;
-    p2p.SetDeviceAttribute ("DataRate", StringValue ("5Mbps"));
+    p2p.SetDeviceAttribute ("DataRate", StringValue ("10Mbps"));
     p2p.SetChannelAttribute ("Delay", StringValue ("2ms"));
 
     NetDeviceContainer clientDevices[client_n];
@@ -113,8 +118,6 @@ main (int argc, char *argv [])
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
     Simulator::Schedule(Seconds(0.0), &CalculateThroughput);
 
-    p2p.EnablePcapAll ("bus_p2p");
-    csma.EnablePcap ("bus_p2p", serverDevices.Get (client_n), true);
 
     Simulator::Stop(Seconds(21.0));
     Simulator::Run ();

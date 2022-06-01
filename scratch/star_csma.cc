@@ -52,7 +52,6 @@ main (int argc, char *argv [])
     CommandLine cmd;
     cmd.AddValue("verbose","Logging or not",verbose);
     cmd.AddValue("client_n","The number of clients",client_n);
-    cmd.AddValue("datarate","Setting the datarate of the channel", DataRate);
     cmd.Parse (argc, argv);
 
     if(verbose)
@@ -102,10 +101,6 @@ main (int argc, char *argv [])
     Ipv4GlobalRoutingHelper::PopulateRoutingTables ();
     Simulator::Schedule(Seconds(0.0), &CalculateThroughput);
     
-    if(verbose)
-    {
-        csma.EnablePcapAll ("star_csma", false);
-    }
 
     Simulator::Stop(Seconds(21.0));
     Simulator::Run ();

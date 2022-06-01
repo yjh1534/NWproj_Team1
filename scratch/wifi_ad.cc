@@ -27,15 +27,20 @@ CalculateThroughput()
 int
 main (int argc, char *argv [])
 {
-    LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
-    LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
-    RngSeedManager::SetSeed(15);
-
     uint32_t client_n = 11;
+    bool verbose=false;
 
     CommandLine cmd;
+    cmd.AddValue("verbose","Logging or not",verbose);
+    cmd.AddValue("client_n","The number of clients",client_n);
     cmd.Parse (argc, argv);
 
+    if(verbose)
+    {
+      LogComponentEnable("wifi_ad",LOG_LEVEL_INFO);
+      LogComponentEnable("ChatServerApplication", LOG_LEVEL_INFO);
+      LogComponentEnable("ChatClientApplication", LOG_LEVEL_INFO);
+    }
     /* Create nodes */
     NodeContainer clientNodes;
     clientNodes.Create (client_n);
