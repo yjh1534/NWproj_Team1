@@ -82,7 +82,8 @@ void ChatServer::SendPacket(std::vector<uint32_t> d_to_send){
     packet->AddHeader(shdr);
 
     for (uint32_t i= 1 ; i <= ClientNumber; ++i){
-        ClientSocketmap[i]->Send(packet->Copy());
+        if(ClientSocketmap[i])
+            ClientSocketmap[i]->Send(packet->Copy());
     }
 }
 void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d_to_send){
@@ -92,10 +93,15 @@ void ChatServer::SendPacket(bool is_room, uint32_t dest, std::vector<uint32_t> d
     packet->AddHeader(shdr);
     if (is_room){
         for(uint32_t i=0; i < chatroom[dest].size(); i++){
-            ClientSocketmap[chatroom[dest][i]]->Send(packet->Copy());
+            if (ClientSocketmap[chatroom[dest][i]])
+                ClientSocketmap[chatroom[dest][i]]->Send(packet->Copy());
         }
    }
     else{
+        if(!ClientSocketmap[dest]){
+            return;
+            dest = d_to_send.back();
+        }
         ClientSocketmap[dest]->Send(packet);
    }
 }   
@@ -143,7 +149,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 SendPacket(true, _data[1], d);
             }
             //making new chatroom in Server
-            else{
+            else if(mod==3){
                 std::vector<uint32_t> new_members;
                 for(uint32_t i = 1; i < _data.size();i++){
                     new_members.push_back(_data[i]);
@@ -153,6 +159,21 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "members: " << get_members(chatroom[d.back()]));
                 NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client" << _data.back() << " make new chatting room");
                 SendPacket(true, d.back(), d);
+            }
+            else if(mod==4){
+                d.push_back(_data[1]);
+                ClientSocketmap[_data[1]]=nullptr;
+                for(auto r : chatroom)
+                {
+                    for(auto &x : r)
+                    {
+                        if(x==_data[1]) x=0;
+                    }
+                }
+
+
+                NS_LOG_INFO("Server Ok: Client" << _data[1] << " is exited");
+                SendPacket(d);
             }
         }
     }

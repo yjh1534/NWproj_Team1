@@ -151,7 +151,7 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
             std::vector<uint32_t> _data = {};
             _data = hdr.GetData();
             if (_data.empty()){
-		NS_LOG_WARN("Invalid Header");
+        		NS_LOG_WARN("Invalid Header");
                 return;
             }
             uint32_t m = _data[0];
@@ -185,6 +185,10 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
                 ChatRoom.push_back(_data[1]);
                 NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client "<< ClientNumber << " invited");
             }
+            else if (m==4){
+                NS_LOG_INFO("Client" << _data[1] << " is exited");
+            }
+
                 /////////////////////////////////////////////////
                 //   LOG: receive info                         //
                 //   room_num 1 -> 2: message transmit info    //
@@ -196,6 +200,17 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
 void ChatClient::StopApplication (void){
     NS_LOG_FUNCTION(this);
     m_running = false;
+
+    std::vector<uint32_t> d_to_send;
+    ChatHeader shdr;
+    d_to_send.push_back(4); // exit
+    d_to_send.push_back(ClientNumber);
+    shdr.SetData(d_to_send);
+    Ptr<Packet> packet = Create<Packet> (m_packetSize - d_to_send.size() -4);
+    packet->AddHeader(shdr);
+    m_txTrace(packet);
+    r_socket->Send(packet);
+
     if(m_sendEvent.IsRunning()){
         Simulator::Cancel(m_sendEvent);
     }
