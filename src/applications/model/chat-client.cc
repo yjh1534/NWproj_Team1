@@ -50,6 +50,7 @@ ChatClient::ChatClient()
 {
     NS_LOG_FUNCTION(this);
     otherClients.clear();
+    exited = false;
 }
 
 void ChatClient::StartApplication(void)
@@ -135,6 +136,8 @@ void ChatClient::SendPacket(void){
 void ChatClient::HandleRead(Ptr<Socket> socket){
     Ptr<Packet> packet;
     Address from;
+    if(exited)
+        return;
     while ((packet = socket->Recv()))
     {
         if(packet->GetSize() > 0)
@@ -210,6 +213,7 @@ void ChatClient::StopApplication (void){
     }
     if(r_socket){
         r_socket->Close();
+        exited=true;
     }
 }
 
