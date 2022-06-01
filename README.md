@@ -1,6 +1,7 @@
 # Run Example to Get Logfiles
 
 * Change 'wifi_ad' to something you want to test.
+* There are details about [Log Level](https://www.nsnam.org/docs/manual/html/logging.html#severity-and-level-options).
 * Can get Log of chatting in './log/*room.dat' files.
 * Can get Log of throughput in './log/*_pt.dat' file. The format of data is 'time "\t" throughput'. 
 
