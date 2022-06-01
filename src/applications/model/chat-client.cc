@@ -186,7 +186,7 @@ void ChatClient::HandleRead(Ptr<Socket> socket){
                 NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client "<< ClientNumber << " invited");
             }
             else if (m==4){
-                NS_LOG_INFO("Client" << _data[1] << " is exited");
+                NS_LOG_INFO("1:1msg\t"<< Simulator::Now().GetSeconds()<<"\t" << "Client " << _data[1] << " is exited");
             }
 
                 /////////////////////////////////////////////////

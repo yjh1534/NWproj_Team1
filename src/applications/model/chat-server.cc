@@ -150,7 +150,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
             else if(mod==2){
                 d.push_back(_data[2]);
                 d.push_back(_data[1]);
-                NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds()<< "\t" << "Client" << _data[2] << " send message");
+                NS_LOG_INFO("room" << _data[1] << "\t" << Simulator::Now().GetSeconds()<< "\t" << "Client " << _data[2] << " send message");
                 SendPacket(true, _data[1], d);
             }
             //making new chatroom in Server
@@ -162,7 +162,7 @@ void ChatServer::HandleRead(Ptr<Socket> socket){
                 d.push_back(chatroom.size());
                 chatroom.push_back(new_members);
                 NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "members: " << get_members(chatroom[d.back()]));
-                NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client" << _data.back() << " make new chatting room");
+                NS_LOG_INFO("room" << d.back() << "\t" << Simulator::Now().GetSeconds() << "\t" << "Client " << _data.back() << " make new chatting room");
                 SendPacket(true, d.back(), d);
             }
             else if(mod==4){
