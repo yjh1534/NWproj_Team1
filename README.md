@@ -20,6 +20,6 @@ cmd.Parse (argc, argv);
 
 ```console
 foo@bar:~$ export 'NS_LOG=wifi_ad=level_all'
-foo@bar:~$ ./waf --run 'wifi_ad' > ./log/wifi_ad.dat 2>&1
+foo@bar:~$ ./waf --run 'wifi_ad --verbose=true --client_n=7 --datarate=1Mbps' > ./log/wifi_ad.dat 2>&1
 foo@bar:~$ bash get_log.sh log/wifi_ad
 ```
